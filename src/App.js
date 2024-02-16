@@ -15,8 +15,9 @@ function App() {
     EventController.set({
       name: "test-params",
       handle: (params) => {
-        const req = JSON.parse(params);
-        document.getElementById("show_element").innerText = req.text;
+        document.getElementById("show_element").innerHTML = params;
+        // const req = JSON.parse(params);
+        // document.getElementById("show_element").innerText = req;
       },
     });
   }, [def]);
