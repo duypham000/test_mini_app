@@ -36,15 +36,6 @@ function App() {
           }}>
           Click Me!!
         </button>
-        <button
-          onClick={() => {
-            setDef("hello");
-          }}
-          style={{
-            padding: 10,
-          }}>
-          Click Me!!
-        </button>
       </header>
     </div>
   );
