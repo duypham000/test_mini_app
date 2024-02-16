@@ -6,6 +6,10 @@ const EventController = {
     EventController.listEvent[name] = handle;
   },
   call: ({ name, params }) => {
-    EventController.listEvent[name](params);
+    if (!params) {
+      EventController.listEvent[name]();
+    } else {
+      return EventController.listEvent[name](params);
+    }
   },
 };

@@ -12,6 +12,13 @@ function App() {
         document.getElementById("show_element").innerText = def;
       },
     });
+    EventController.set({
+      name: "test-params",
+      handle: (params) => {
+        const req = JSON.parse(params);
+        document.getElementById("show_element").innerText = req.text;
+      },
+    });
   }, [def]);
   return (
     <div className="App">
@@ -20,6 +27,15 @@ function App() {
         <p id="show_element">
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <button
+          onClick={() => {
+            setDef("hello");
+          }}
+          style={{
+            padding: 10,
+          }}>
+          Click Me!!
+        </button>
         <button
           onClick={() => {
             setDef("hello");
