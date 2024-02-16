@@ -4,31 +4,31 @@ import "./App.css";
 import React from "react";
 
 function App() {
+  const [def, setDef] = React.useState("fss");
   React.useEffect(() => {
     EventController.set({
       name: "test",
       handle: () => {
-        document.getElementById("show_element").innerText = "got it";
+        document.getElementById("show_element").innerText = def;
       },
     });
-  });
+  }, [def]);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <p id="show_element">
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
+        <button
+          onClick={() => {
+            setDef("hello");
+          }}
+          style={{
+            padding: 10,
+          }}>
+          Click Me!!
+        </button>
       </header>
     </div>
   );
