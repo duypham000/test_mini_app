@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 
 var isFlutterInAppWebViewReady = false;
 window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
@@ -23,5 +23,14 @@ const EventController = {
     if (isFlutterInAppWebViewReady) {
       window.flutter_inappwebview.callHandler(name, ...args);
     }
+  },
+};
+
+const NativeMethod = {
+  toast: (msg) => {
+    EventController.callHandler({
+      name: "JsToNative_toast",
+      args: msg,
+    });
   },
 };

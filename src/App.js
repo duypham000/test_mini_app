@@ -23,12 +23,12 @@ function App() {
     });
   }, [def]);
 
-  const handlePushToast = () => {
-    EventController.callHandler({
-      name: "call_handle",
-      args: ["hello", 12, 5.3],
-    });
-  };
+  // const handlePushToast = () => {
+  //   EventController.callHandler({
+  //     name: "call_handle",
+  //     args: ["hello", 12, 5.3],
+  //   });
+  // };
   return (
     <div className="App">
       <header className="App-header">
@@ -47,7 +47,7 @@ function App() {
         </button>
         <button
           onClick={() => {
-            handlePushToast();
+            NativeMethod.toast("hello");
           }}
           style={{
             padding: 10,
