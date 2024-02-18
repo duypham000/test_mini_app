@@ -17,18 +17,10 @@ function App() {
       handle: (params) => {
         document.getElementById("show_element").innerHTML =
           params.text + "\n" + params.num + "\n" + params.db;
-        // const req = JSON.parse(params);
-        // document.getElementById("show_element").innerText = req;
       },
     });
   }, [def]);
 
-  // const handlePushToast = () => {
-  //   EventController.callHandler({
-  //     name: "call_handle",
-  //     args: ["hello", 12, 5.3],
-  //   });
-  // };
   return (
     <div className="App">
       <header className="App-header">
