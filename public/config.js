@@ -6,7 +6,8 @@ window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
 });
 const EventController = {
   listEvent: {},
-  set: ({ name, handle }: { name: String, handle: (q: any) => void }) => {
+  // { name, handle }: { name: String, handle: (q: any) => void }
+  set: ({ name, handle }) => {
     EventController.listEvent[name] = handle;
   },
   call: ({ name, params }) => {
@@ -17,7 +18,8 @@ const EventController = {
       return EventController.listEvent[name](params);
     }
   },
-  callHandler: ({ name, args }: { name: any, args: any[] }) => {
+  //  : { name: any, args: any[] }
+  callHandler: ({ name, args }) => {
     if (isFlutterInAppWebViewReady) {
       window.flutter_inappwebview.callHandler(name, args);
     }
