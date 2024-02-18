@@ -30,7 +30,7 @@ const NativeMethod = {
   toast: (msg) => {
     EventController.callHandler({
       name: "JsToNative_toast",
-      args: msg,
+      args: [msg],
     });
   },
 };
