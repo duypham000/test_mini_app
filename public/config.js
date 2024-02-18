@@ -21,7 +21,7 @@ const EventController = {
   //  : { name: any, args: any[] }
   callHandler: ({ name, args }) => {
     if (isFlutterInAppWebViewReady) {
-      window.flutter_inappwebview.callHandler(name, args);
+      window.flutter_inappwebview.callHandler(name, ...args);
     }
   },
 };
