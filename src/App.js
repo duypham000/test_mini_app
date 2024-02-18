@@ -22,6 +22,13 @@ function App() {
       },
     });
   }, [def]);
+
+  const handlePushToast = () => {
+    EventController.callHandler({
+      name: "call_handle",
+      args: ["hello", 12, 5.3],
+    });
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -37,6 +44,15 @@ function App() {
             padding: 10,
           }}>
           Click Me!!
+        </button>
+        <button
+          onClick={() => {
+            handlePushToast();
+          }}
+          style={{
+            padding: 10,
+          }}>
+          Toast
         </button>
       </header>
     </div>
