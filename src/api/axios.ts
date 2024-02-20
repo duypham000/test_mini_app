@@ -37,10 +37,6 @@ class MainAxios {
     // ...
   }
 }
-const MOCK_TOKEN =
-  "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaG9rdm9kYW5oMDUwOEBnbWFpbC5jb20iLCJhdXRoIjoiUk9MRV9VU0VSLFJPTEVfQURNSU4iLCJ1aWQiOjczNTUxLCJzaWQiOiIyNTA5NmVhYS1mMGMzLTQ3NDctOTk1ZS00ZDA4OTIxYTVjMjgiLCJwZSI6ZmFsc2UsImV4cCI6MTcwODQ5MDI0M30.TrQ5ThDCpKjeqDLIor7G3qKacVEMqZFYZM8AFuXdwLuoSB8ghZGQJG50OKm0aZae8hS_Y5DNtwWOnJcg02tQNQ";
-
-setCookie(Storage.token, MOCK_TOKEN);
 
 // variable
 let isRefreshing = false;
