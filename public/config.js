@@ -40,7 +40,3 @@ const NativeMethod = {
     });
   },
 };
-
-window.addEventListener("DOMContentLoaded", function (event) {
-  NativeMethod.documentReady();
-});

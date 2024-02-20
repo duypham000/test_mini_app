@@ -13,6 +13,8 @@ root.render(
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log(document.getElementById("show_element"));
+  // eslint-disable-next-line no-undef
+  NativeMethod.documentReady();
 });
 
 // If you want to start measuring performance in your app, pass a function
