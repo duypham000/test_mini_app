@@ -20,6 +20,14 @@ function App() {
           params.text + "\n" + params.num + "\n" + params.db;
       },
     });
+    const a = mainAxios
+      .get("/api/personalize/ta-indicator-favorite/list")
+      .then((e) => {
+        document.getElementById("show_element").innerHTML = "success";
+      })
+      .catch((e) => {
+        document.getElementById("show_element").innerHTML = "error";
+      });
   }, [def]);
 
   return (
@@ -46,22 +54,6 @@ function App() {
             padding: 10,
           }}>
           Toast
-        </button>
-        <button
-          style={{
-            padding: 20,
-          }}
-          onClick={() => {
-            const a = mainAxios
-              .get("/api/personalize/ta-indicator-favorite/list")
-              .then((e) => {
-                document.getElementById("show_element").innerHTML = "success";
-              })
-              .catch((e) => {
-                document.getElementById("show_element").innerHTML = "error";
-              });
-          }}>
-          Get
         </button>
       </header>
     </div>
