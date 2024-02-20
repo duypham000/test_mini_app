@@ -4,6 +4,7 @@ var isFlutterInAppWebViewReady = false;
 window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
   isFlutterInAppWebViewReady = true;
   NativeMethod.documentReady();
+  console.log("done");
 });
 const EventController = {
   listEvent: {},
@@ -34,7 +35,7 @@ const NativeMethod = {
       args: [msg],
     });
   },
-  documentReady: (msg) => {
+  documentReady: () => {
     EventController.callHandler({
       name: "JsToNative_documentReady",
       args: [],
