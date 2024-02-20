@@ -11,7 +11,6 @@ root.render(
   </React.StrictMode>
 );
 // eslint-disable-next-line no-undef
-NativeMethod.documentReady();
 document.addEventListener("DOMContentLoaded", () => {
   console.log(document.getElementById("show_element"));
 });
