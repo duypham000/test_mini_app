@@ -5,6 +5,7 @@ window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
   isFlutterInAppWebViewReady = true;
   NativeMethod.documentReady();
   console.log("done");
+  window.flutter_inappwebview.callHandler("hello");
 });
 const EventController = {
   listEvent: {},
