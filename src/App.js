@@ -2,6 +2,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import mainAxios from "./api/axios";
 
 function App() {
   const [def, setDef] = React.useState("fss");
@@ -46,13 +47,22 @@ function App() {
           }}>
           Toast
         </button>
-        <input
-          type="image"
-          src="img_submit.gif"
-          alt="Submit"
-          width="48"
-          height="48"
-        />
+        <button
+          style={{
+            padding: 20,
+          }}
+          onClick={() => {
+            const a = mainAxios
+              .get("/api/personalize/ta-indicator-favorite/list")
+              .then((e) => {
+                document.getElementById("show_element").innerHTML = "success";
+              })
+              .catch((e) => {
+                document.getElementById("show_element").innerHTML = "error";
+              });
+          }}>
+          Get
+        </button>
       </header>
     </div>
   );
