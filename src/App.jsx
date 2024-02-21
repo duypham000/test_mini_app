@@ -1,16 +1,10 @@
-import { useState } from 'react'
-import reactLogo from '@/assets/react.svg'
-import viteLogo from '/vite.svg'
 import GlobalStyles from '@/styles/GlobalStyles'
 import '@/App.css'
-import { ThemeProvider } from '@emotion/react'
 import NewPage1 from './NewPage1'
-import { Route, Routes, Router, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import NewPage2 from './NewPage2'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <GlobalStyles>
       <BrowserRouter>

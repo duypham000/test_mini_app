@@ -6,6 +6,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
     'eslint-config-prettier',
     'prettier'
   ],
@@ -16,6 +17,11 @@ module.exports = {
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'react-hooks/exhaustive-deps': 'off',
+    'react/no-unknown-property': 'off',
+    'react/jsx-key': 'off',
+    'react/prop-types': 'off',
+    'no-case-declarations': 'off',
     'prettier/prettier': [
       'warn',
       {
