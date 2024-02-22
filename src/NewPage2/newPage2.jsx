@@ -1,9 +1,9 @@
+import NativeMethod from '@/components/NativeMethod'
 import styles from './style'
 import { Link } from 'react-router-dom'
 
 const NewPage2 = () => {
   const handleToast = () => {
-    // eslint-disable-next-line no-undef
     NativeMethod.toast('Page 2')
   }
   return (
