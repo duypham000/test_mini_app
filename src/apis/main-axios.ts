@@ -205,30 +205,30 @@ mainAxios.interceptors.response.use(
 
     if (typeof window === 'undefined') return originalConfig
 
-    const refreshToken = getCookie(Storage.refresh_token)
+    // const refreshToken = getCookie(Storage.refresh_token)
 
-    if (originalConfig?.url !== '/auth/login' && error.response) {
-      // Access Token was expired
-      if (error.response?.status === 401) {
-        handleRefreshToken(refreshToken, true, originalConfig)
+    // if (originalConfig?.url !== '/auth/login' && error.response) {
+    //   // Access Token was expired
+    //   if (error.response?.status === 401) {
+    //     handleRefreshToken(refreshToken, true, originalConfig)
 
-        const retryOriginalRequest = new Promise((resolve) => {
-          subscribeTokenRefresh((accessToken) => {
-            const config = {
-              ...originalConfig,
-              headers: {
-                ...originalConfig?.headers,
-                Authorization: `Bearer ${accessToken}`
-              }
-            }
+    //     const retryOriginalRequest = new Promise((resolve) => {
+    //       subscribeTokenRefresh((accessToken) => {
+    //         const config = {
+    //           ...originalConfig,
+    //           headers: {
+    //             ...originalConfig?.headers,
+    //             Authorization: `Bearer ${accessToken}`
+    //           }
+    //         }
 
-            resolve(mainAxios(config))
-          })
-        })
+    //         resolve(mainAxios(config))
+    //       })
+    //     })
 
-        return Promise.reject(retryOriginalRequest)
-      }
-    }
+    //     return Promise.reject(retryOriginalRequest)
+    //   }
+    // }
 
     return Promise.reject(error)
   }
