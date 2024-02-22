@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import styles from './style'
-import NativeMethod from '@/components/NativeMethod'
 
 const NewPage1 = () => {
   const handleToast = () => {

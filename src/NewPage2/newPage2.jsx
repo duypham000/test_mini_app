@@ -1,4 +1,3 @@
-import NativeMethod from '@/components/NativeMethod'
 import styles from './style'
 import { Link } from 'react-router-dom'
 
