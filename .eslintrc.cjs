@@ -22,7 +22,6 @@ module.exports = {
     'react/jsx-key': 'off',
     'react/prop-types': 'off',
     'no-case-declarations': 'off',
-    'no-undef': 'off',
     'prettier/prettier': [
       'warn',
       {
