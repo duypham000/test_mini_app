@@ -1,1 +1,1 @@
-export { default } from "./NativeMethod.jsx";
+export { default } from './NativeMethod.jsx'

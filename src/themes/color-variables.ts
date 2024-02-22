@@ -1,4 +1,4 @@
-export type ColorVariables = typeof colorVariables;
+export type ColorVariables = typeof colorVariables
 
 const singleColors = {
   simplizeBlue: 'var(--simplizeBlue)', // primary
@@ -137,8 +137,8 @@ const singleColors = {
   black19002: 'var(--black19002)',
   black190024: 'var(--black190024)',
   black0025: 'var(--black0025)',
-  black01: 'var(--black01)',
-};
+  black01: 'var(--black01)'
+}
 
 const dynamicColors = {
   // old-colors
@@ -273,10 +273,10 @@ const dynamicColors = {
   dc072: 'var(--dc072)',
   dc073: 'var(--dc073)',
   dc074: 'var(--dc074)',
-  dc075: 'var(--dc075)',
-};
+  dc075: 'var(--dc075)'
+}
 
 export const colorVariables = {
   ...singleColors,
-  ...dynamicColors,
-};
+  ...dynamicColors
+}

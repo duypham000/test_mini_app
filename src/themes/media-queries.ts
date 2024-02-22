@@ -1,10 +1,10 @@
-export type MediaQueries = typeof mediaQueries;
+export type MediaQueries = typeof mediaQueries
 
 export const sizeResponsive = {
   desktop: 'min-width: 1000px',
   mobile: 'max-width: 999px',
-  tablet: '(max-width: 1366px) and (min-width: 1000px)',
-};
+  tablet: '(max-width: 1366px) and (min-width: 1000px)'
+}
 
 export const mediaQueries = {
   // Mobile portrait:
@@ -27,5 +27,5 @@ export const mediaQueries = {
 
   desktop: `@media (${sizeResponsive.desktop})`,
   mobile: `@media (${sizeResponsive.mobile})`,
-  tablet: `@media ${sizeResponsive.tablet}`,
-};
+  tablet: `@media ${sizeResponsive.tablet}`
+}

@@ -136,5 +136,5 @@ export const colors = {
   black19002: 'rgba(190, 190, 190, .2)',
   black190024: 'rgba(129, 129, 129, .24)',
   black0025: 'rgba(0, 0, 0, 0.25)',
-  black01: '#2d2e2f',
-};
+  black01: '#2d2e2f'
+}
