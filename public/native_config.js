@@ -1,5 +1,5 @@
 var isFlutterInAppWebViewReady = false
-window.addEventListener('flutterInAppWebViewPlatformReady', function (event) {
+window.addEventListener('flutterInAppWebViewPlatformReady', function () {
   isFlutterInAppWebViewReady = true
 })
 
@@ -25,6 +25,7 @@ const EventController = {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 const NativeMethod = {
   toast: (msg) => {
     EventController.callHandler({
