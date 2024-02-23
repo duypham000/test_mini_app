@@ -1,7 +1,10 @@
-import NativeMethod from '@/components/NativeMethod'
 import styles from './style'
 import { Link } from 'react-router-dom'
 import mainAxios from '@/apis/main-axios'
+import React from 'react'
+import { useAppSelector } from '@/redux/hooks'
+import { urlExternal } from '@/constants/url-internal'
+import NativeMethod from '@/NativeMethod'
 
 const NewPage1: React.FC = () => {
   const handleToast = () => {
@@ -14,8 +17,12 @@ const NewPage1: React.FC = () => {
     } catch (error) {
       document.getElementById('test')!.innerHTML = 'error'
     }
-    // console.log(process)
   }
+
+  const userInfo = useAppSelector((state) => state.profile.userInfo)
+  React.useEffect(() => {
+    console.log(userInfo)
+  }, [userInfo])
 
   return (
     <div css={styles.wrapper}>
@@ -27,7 +34,7 @@ const NewPage1: React.FC = () => {
       <button onClick={handleTest} css={styles.btn}>
         Test Axios
       </button>
-      <Link to={'/p2'}>
+      <Link to={urlExternal.NEW_PAGE_2}>
         <button css={styles.btn}>To Page 2</button>
       </Link>
     </div>

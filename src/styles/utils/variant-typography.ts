@@ -1,6 +1,6 @@
-import { VARIANT } from '@/constants/typography'
 import { Theme } from '@/themes/theme'
 import { css } from '@emotion/react'
+import { VARIANT } from '../customs/typography'
 
 const variantTypography =
   ({

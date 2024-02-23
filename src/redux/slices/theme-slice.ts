@@ -1,14 +1,14 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface ThemeState {
-  isDark: boolean;
-  scale: '90%' | '100%' | '110%';
+  isDark: boolean
+  scale: '90%' | '100%' | '110%'
 }
 
 const initialState: ThemeState = {
   isDark: true,
-  scale: '100%',
-};
+  scale: '100%'
+}
 
 export const themeSlice = createSlice({
   name: 'theme',
@@ -16,10 +16,10 @@ export const themeSlice = createSlice({
   reducers: {
     // isDark
     setIsDark: (state: ThemeState, action: PayloadAction<boolean>) => {
-      state.isDark = action.payload;
+      state.isDark = action.payload
     },
     switchIsDark: (state: ThemeState) => {
-      state.isDark = !state.isDark;
+      state.isDark = !state.isDark
     },
 
     // scale
@@ -27,19 +27,19 @@ export const themeSlice = createSlice({
       state: ThemeState,
       action: PayloadAction<'90%' | '100%' | '110%'>
     ) => {
-      state.scale = action.payload;
+      state.scale = action.payload
     },
     scaleDown: (state: ThemeState) => {
-      state.scale = '90%';
+      state.scale = '90%'
     },
     scaleUp: (state: ThemeState) => {
-      state.scale = '110%';
+      state.scale = '110%'
     },
     scaleNormal: (state: ThemeState) => {
-      state.scale = '100%';
-    },
-  },
-});
+      state.scale = '100%'
+    }
+  }
+})
 
 export const {
   setIsDark,
@@ -47,7 +47,7 @@ export const {
   setScale,
   scaleDown,
   scaleUp,
-  scaleNormal,
-} = themeSlice.actions;
+  scaleNormal
+} = themeSlice.actions
 
-export default themeSlice.reducer;
+export default themeSlice.reducer

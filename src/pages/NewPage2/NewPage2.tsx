@@ -1,6 +1,7 @@
-import NativeMethod from '@/components/NativeMethod'
 import styles from './style'
 import { Link } from 'react-router-dom'
+import { urlExternal } from '@/constants/url-internal'
+import NativeMethod from '@/NativeMethod'
 
 const NewPage2: React.FC = () => {
   const handleToast = () => {
@@ -12,8 +13,8 @@ const NewPage2: React.FC = () => {
       <button onClick={handleToast} css={styles.btn}>
         Toast
       </button>
-      <Link to={'/p1'}>
-        <button css={styles.btn}>To Page 2</button>
+      <Link to={urlExternal.NEW_PAGE_1}>
+        <button css={styles.btn}>To Page 1</button>
       </Link>
     </div>
   )

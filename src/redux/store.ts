@@ -1,7 +1,6 @@
 import themeReducer from './slices/theme-slice'
 import eventReducer from './slices/event-slice'
 import profileReducer from './slices/profile-slice'
-import screenerReducer from '@/ScreenerModule/screener-slice'
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
 
 export const makeStore = () =>
@@ -9,7 +8,6 @@ export const makeStore = () =>
     reducer: {
       theme: themeReducer,
       event: eventReducer,
-      screener: screenerReducer,
       profile: profileReducer
     },
     devTools: true,

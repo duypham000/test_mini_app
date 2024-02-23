@@ -1,4 +1,3 @@
-import { IGetCurrentUserProfileData, IGetUserInfoProfileData } from '@/types'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface ProfileState {
@@ -37,16 +36,10 @@ export const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    setCurrentUser: (
-      state: ProfileState,
-      action: PayloadAction<IGetCurrentUserProfileData>
-    ) => {
+    setCurrentUser: (state: ProfileState, action: PayloadAction<any>) => {
       state.currentUser = action.payload
     },
-    setUserInfo: (
-      state: ProfileState,
-      action: PayloadAction<IGetUserInfoProfileData>
-    ) => {
+    setUserInfo: (state: ProfileState, action: PayloadAction<any>) => {
       state.userInfo = action.payload
     },
     setAccountList: (state: ProfileState, action: PayloadAction<any[]>) => {
