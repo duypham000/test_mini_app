@@ -21,7 +21,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "types": ["@emotion/react"],
+    "types": ["@emotion/react", "vite/client"],
     "jsxImportSource": "@emotion/react",
     "jsx": "preserve",
     "incremental": true,
