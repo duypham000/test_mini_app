@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import mainAxios from '@/apis/main-axios'
 import React from 'react'
 import { useAppSelector } from '@/redux/hooks'
-import { urlExternal } from '@/constants/url-internal'
+import { UrlInternal } from '@/constants/url-internal'
 import NativeMethod from '@/NativeMethod'
 
 const NewPage1: React.FC = () => {
@@ -34,7 +34,7 @@ const NewPage1: React.FC = () => {
       <button onClick={handleTest} css={styles.btn}>
         Test Axios
       </button>
-      <Link to={urlExternal.NEW_PAGE_2}>
+      <Link to={UrlInternal.SUPPORT_VDSC}>
         <button css={styles.btn}>To Page 2</button>
       </Link>
     </div>

@@ -1,4 +1,5 @@
 var isFlutterInAppWebViewReady = false
+// eslint-disable-next-line no-undef
 window.addEventListener('flutterInAppWebViewPlatformReady', function () {
   isFlutterInAppWebViewReady = true
 })
@@ -20,6 +21,7 @@ const EventController = {
   //  : { name: any, args: any[] }
   callHandler: ({ name, args }) => {
     if (isFlutterInAppWebViewReady) {
+      // eslint-disable-next-line no-undef
       window.flutter_inappwebview.callHandler(name, ...args)
     }
   }

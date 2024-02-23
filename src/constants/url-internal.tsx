@@ -1,5 +1,5 @@
-export enum urlExternal {
+export enum UrlInternal {
   HOME_PAGE = '/',
-  NEW_PAGE_1 = '/p1',
-  NEW_PAGE_2 = '/p2'
+  CREATE_VDSC = '/create_vdsc',
+  SUPPORT_VDSC = '/support_vdsc'
 }
