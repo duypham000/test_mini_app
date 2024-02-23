@@ -1,7 +1,7 @@
-import NewPage1 from '@/pages/NewPage1'
 import NewPage2 from '@/pages/NewPage2'
 import { UrlInternal } from '@/constants/url-internal'
 import IntegrationModule from '@/pages/Integration/Integration'
+import VdscAccountCreation from './pages/VdscAccountCreation'
 
 export const routes = {
   HOME_PAGE: {
@@ -10,7 +10,7 @@ export const routes = {
   },
   PAGE_1: {
     url: UrlInternal.CREATE_VDSC,
-    element: <NewPage1 />
+    element: <VdscAccountCreation />
   },
   PAGE_2: {
     url: UrlInternal.SUPPORT_VDSC,

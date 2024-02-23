@@ -33,7 +33,7 @@ const ConnectToVdscDialog: React.FC = (): JSX.Element => {
           css={styles.btnCreate()}
           onClick={() => {
             dispatch(setVisibleConnectToVdsc(false))
-            navigate(`${UrlInternal.CREATE_VDSC}/create/vdsc`)
+            navigate(`${UrlInternal.CREATE_VDSC}`)
           }}
         >
           <Typography
@@ -52,29 +52,7 @@ const ConnectToVdscDialog: React.FC = (): JSX.Element => {
           >{`Mở tài khoản chứng khoán Rồng Việt online một cách dễ dàng, nhanh chóng`}</Typography>
         </div>
 
-        {/* <p>
-          <WarningIcon2 css={{ transform: 'translateY(2px)' }} />
-          <span
-            css={(theme) => ({
-              color: theme.color.dc011,
-              margin: '0px 4px',
-            })}
-          >{`Lưu ý:`}</span>
-          <span
-            css={(theme) => ({
-              color: theme.color.dc014,
-            })}
-          >{`Tạm thời những tài khoản đã mở ở CTCP Chứng khoán Rồng Việt (VDSC) từ trước đang chưa thể tích hợp được với Simplize. VDSC và Simplize sẽ sớm tìm giải pháp cho vấn đề này.`}</span>
-        </p> */}
-
-        <Link
-          to={UrlInternal.SUPPORT_VDSC}
-          css={styles.btnLink()}
-          // onClick={() => {
-          //   dispatch(setVisibleConnectToVdsc(false));
-          //   dispatch(setVisibleSynchronizedToVdsc(true));
-          // }}
-        >
+        <Link to={UrlInternal.SUPPORT_VDSC} css={styles.btnLink()}>
           <Typography
             variant='sub_heading_one'
             cssCustom={{ marginBottom: 8 }}
