@@ -6,10 +6,15 @@ import { useDispatch } from 'react-redux'
 import { setUserInfo } from '@/redux/slices/profile-slice'
 import { routes } from '@/router'
 import NativeMethod from '@/NativeMethod'
+import { getLocalStorageItem } from './utils/storage/local-storage'
+import { Storage } from '@/constants/storage'
 
 function App() {
   const dispath = useDispatch()
   React.useEffect(() => {
+    const theme = getLocalStorageItem(Storage.theme) || 'dark'
+
+    document.getElementsByTagName('html')[0]!.setAttribute('data-theme', theme)
     ;(async () => {
       try {
         const res = await mainAxios.get('api/general/membership/info')

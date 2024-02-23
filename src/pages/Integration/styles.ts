@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   wrapper: () => () =>
@@ -8,35 +8,32 @@ const styles = {
         height: `100%`,
         display: `flex`,
         flexDirection: `column`,
-      },
+        padding: 15
+      }
     ]),
   heading: () => (theme: Theme) => css([{ color: theme.color.dc011 }]),
-  contentWrapper: () => (theme: Theme) =>
+  contentWrapper: () => () =>
     css([
       {
         flex: 1,
-        flexDirection: `column`,
-
-        [theme.mediaQuery.mobile]: {
-          paddingTop: 153,
-        },
-      },
+        flexDirection: `column`
+      }
     ]),
   body: () => (theme: Theme) =>
     css([
       {
         color: theme.color.dc014,
         display: `block`,
-        marginTop: 16,
-      },
+        marginTop: 16
+      }
     ]),
   button: () => () =>
     css([
       {
         marginTop: 24,
-        padding: `8px 32px !important`,
-      },
-    ]),
-};
+        padding: `8px 32px !important`
+      }
+    ])
+}
 
-export default styles;
+export default styles
