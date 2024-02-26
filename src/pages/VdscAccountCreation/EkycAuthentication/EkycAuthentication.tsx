@@ -226,10 +226,15 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
                             onClick={() => {
                               NativeMethod.takeImage({
                                 callback: (file) => {
+                                  const mineType =
+                                    'image/' +
+                                    file.name.split('.')[
+                                      file.name.split('.').length - 1
+                                    ]
                                   urltoFile(
                                     file.base64,
                                     file.name,
-                                    file.mineType
+                                    mineType
                                   ).then((e) => {
                                     handleUploadInfrontImage(e)
                                   })
