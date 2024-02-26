@@ -24,6 +24,7 @@ const NativeMethod = {
       name: 'JsToNative_takeImage_callback',
       handle: callback
     })
+    console.log(EventController)
     EventController.callHandler({ name: 'JsToNative_takeImage', args: [] })
   },
   addEventListener: ({ name, handle }) => {
