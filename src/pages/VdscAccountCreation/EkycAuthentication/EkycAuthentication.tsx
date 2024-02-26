@@ -71,16 +71,25 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
     React.useState(false)
   const [profileImage, setProfileImage] = React.useState()
 
-  const handleUploadInfrontImage = (e: any) => {
-    const fileImage = e
-    console.log(fileImage)
-
-    setInfrontImage(fileImage)
+  const takeImage = (callback) => {
+    NativeMethod.takeImage({
+      callback: (file) => {
+        const mineType =
+          'image/' + file.name.split('.')[file.name.split('.').length - 1]
+        urltoFile(file.base64, file.name, mineType).then((e) => {
+          callback(e)
+        })
+      }
+    })
+  }
+  const handleUploadInfrontImage = () => {
+    takeImage(setInfrontImage)
+    // setInfrontImage(fileImage)
   }
 
-  const handleUploadBehindImage = (e: any) => {
-    const fileImage = e.target.files[0]
-    setBehindImage(fileImage)
+  const handleUploadBehindImage = () => {
+    takeImage(setBehindImage)
+    // setBehindImage(fileImage)
   }
 
   const handleUseImageFileInfront = (imageFile: any) => {
@@ -224,22 +233,7 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
                             type={`button`}
                             id={`in_front_image`}
                             onClick={() => {
-                              NativeMethod.takeImage({
-                                callback: (file) => {
-                                  const mineType =
-                                    'image/' +
-                                    file.name.split('.')[
-                                      file.name.split('.').length - 1
-                                    ]
-                                  urltoFile(
-                                    file.base64,
-                                    file.name,
-                                    mineType
-                                  ).then((e) => {
-                                    handleUploadInfrontImage(e)
-                                  })
-                                }
-                              })
+                              handleUploadInfrontImage()
                             }}
                             accept={`image/*`}
                           />
@@ -307,7 +301,9 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
                             className='take_photo_item_content_upload_image'
                             type={`file`}
                             id={`behind_image`}
-                            onChange={handleUploadBehindImage}
+                            onChange={() => {
+                              handleUploadBehindImage()
+                            }}
                             accept={`image/*`}
                           />
 
