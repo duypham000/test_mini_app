@@ -15,7 +15,6 @@ const NewPage1: React.FC = () => {
   React.useEffect(() => {
     console.log(userInfo)
   }, [userInfo])
-
   const handleRecord = () => {
     NativeMethod.videoRecord({
       callback: (base64Video) => {
@@ -26,6 +25,12 @@ const NewPage1: React.FC = () => {
       }
     })
   }
+  React.useEffect(() => {
+    //Usage example:
+    // urltoFile(base64, 'test.jpg', 'image/jpeg').then(function (file) {
+    //   console.log(file)
+    // })
+  }, [])
 
   return (
     <div css={styles.wrapper}>

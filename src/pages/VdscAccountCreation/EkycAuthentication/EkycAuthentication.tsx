@@ -16,6 +16,8 @@ import { css } from '@emotion/react'
 import { useAppSelector } from '@/redux/hooks'
 import VerticalStep from '@/components/VerticalStep'
 import HorizontalStep from '@/components/HorizontalStep'
+import NativeMethod from '@/NativeMethod'
+import { urltoFile } from '@/NativeMethod/NativeMethod'
 
 interface Props {
   dataOpenStockAccount: any
@@ -71,6 +73,8 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
 
   const handleUploadInfrontImage = (e: any) => {
     const fileImage = e.target.files[0]
+    console.log(fileImage)
+
     setInfrontImage(fileImage)
   }
 
@@ -217,9 +221,21 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
 
                           <input
                             className='take_photo_item_content_upload_image'
-                            type={`file`}
+                            type={`button`}
                             id={`in_front_image`}
-                            onChange={handleUploadInfrontImage}
+                            onClick={() => {
+                              NativeMethod.takeImage({
+                                callback: (file) => {
+                                  urltoFile(
+                                    file.base64,
+                                    file.name,
+                                    file.mineType
+                                  ).then((e) => {
+                                    handleUploadInfrontImage(e)
+                                  })
+                                }
+                              })
+                            }}
                             accept={`image/*`}
                           />
                         </div>
