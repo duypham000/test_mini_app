@@ -72,7 +72,7 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
   const [profileImage, setProfileImage] = React.useState()
 
   const handleUploadInfrontImage = (e: any) => {
-    const fileImage = e.target.files[0]
+    const fileImage = e
     console.log(fileImage)
 
     setInfrontImage(fileImage)
