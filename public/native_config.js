@@ -1,10 +1,8 @@
+/* eslint-disable */
 var isFlutterInAppWebViewReady = false
-// eslint-disable-next-line no-undef
 window.addEventListener('flutterInAppWebViewPlatformReady', function () {
   isFlutterInAppWebViewReady = true
-  // eslint-disable-next-line no-undef
   console.log(window.flutter_inappwebview)
-  // eslint-disable-next-line no-undef
   window.flutter_inappwebview.callHandler('log', window.flutter_inappwebview)
 })
 
@@ -25,8 +23,16 @@ const EventController = {
   //  : { name: any, args: any[] }
   callHandler: ({ name, args }) => {
     if (isFlutterInAppWebViewReady) {
-      // eslint-disable-next-line no-undef
       window.flutter_inappwebview.callHandler(name, ...args)
     }
   }
+}
+
+function loadMediaFromBase64String(base64Media) {
+  var mediaType = 'image/jpeg' // Change to "video/mp4" for video
+  var media = document.createElement(
+    mediaType.startsWith('image') ? 'img' : 'video'
+  )
+  media.src = 'data:' + mediaType + ';base64,' + base64Media
+  document.body.appendChild(media)
 }
