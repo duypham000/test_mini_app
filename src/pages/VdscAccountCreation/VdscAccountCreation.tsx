@@ -432,6 +432,10 @@ const VdscAccountCreation: React.FC = (): JSX.Element => {
       const formData = new FormData()
       formData.append('frontCard', infrontImage)
       formData.append('backCard', behindImage)
+      console.log(typeof infrontImage)
+      console.log(infrontImage)
+      console.log(behindImage)
+      console.log(formData)
       setLoadingGoNextEkyc(true)
       ekycOcr(formData)
         .then(() => {

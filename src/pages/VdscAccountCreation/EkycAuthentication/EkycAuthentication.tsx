@@ -301,7 +301,7 @@ const EkycAuthentication: React.FC<Props> = (props): JSX.Element => {
                             className='take_photo_item_content_upload_image'
                             type={`button`}
                             id={`behind_image`}
-                            onClick={() => {
+                            onChange={() => {
                               handleUploadBehindImage()
                             }}
                             accept={`image/*`}
