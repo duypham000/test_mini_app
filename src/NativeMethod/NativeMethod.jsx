@@ -14,7 +14,7 @@ const NativeMethod = {
   },
   videoRecord: ({ callback }) => {
     EventController.set({ name: 'videoLoaded', handle: callback })
-    EventController.callHandler({ name: 'JsToNative_recordVideo' })
+    EventController.callHandler({ name: 'JsToNative_recordVideo', args: [] })
   },
   addEventListener: ({ name, handle }) => {
     EventController.set({ name, handle })
