@@ -27,10 +27,3 @@ const EventController = {
     }
   }
 }
-
-function loadVideoFromBase64String(base64Video) {
-  var video = document.createElement('video')
-  video.src = 'data:video/mp4;base64,' + base64Video
-  video.controls = true
-  document.body.appendChild(video)
-}

@@ -10,20 +10,6 @@ const NewPage1: React.FC = () => {
   const handleToast = () => {
     NativeMethod.toast('Page 1')
   }
-  const handleTest = async () => {
-    // try {
-    //   fetch(
-    //     'file:///C:/Users/khanh/Pictures/Camera%20Roll/WIN_20240128_20_35_16_Pro.jpg'
-    //   ).then((e) => {
-    //     console.log(e)
-    //     document.getElementById('test')!.innerHTML = 'done'
-    //   })
-    // } catch (error) {
-    //   document.getElementById('test')!.innerHTML = 'error'
-    // }
-    console.log(inputRef.current.files)
-  }
-
   // function loadVideoFromBase64String(base64Video) {}
   NativeMethod.addEventListener({
     name: 'loadVideoFromBase64String',
@@ -37,6 +23,17 @@ const NewPage1: React.FC = () => {
   React.useEffect(() => {
     console.log(userInfo)
   }, [userInfo])
+
+  const handleRecord = () => {
+    NativeMethod.videoRecord({
+      callback: (base64Video) => {
+        const video = document.createElement('video')
+        video.src = 'data:video/mp4;base64,' + base64Video
+        video.controls = true
+        document.body.appendChild(video)
+      }
+    })
+  }
 
   return (
     <div css={styles.wrapper}>
@@ -56,8 +53,8 @@ const NewPage1: React.FC = () => {
       <button onClick={handleToast} css={styles.btn}>
         Toast
       </button>
-      <button onClick={handleTest} css={styles.btn}>
-        Test get Img
+      <button onClick={handleRecord} css={styles.btn}>
+        record
       </button>
       <Link to={UrlInternal.SUPPORT_VDSC}>
         <button css={styles.btn}>To Page 2</button>
