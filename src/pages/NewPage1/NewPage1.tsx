@@ -11,14 +11,6 @@ const NewPage1: React.FC = () => {
     NativeMethod.toast('Page 1')
   }
   // function loadVideoFromBase64String(base64Video) {}
-  NativeMethod.addEventListener({
-    name: 'loadVideoFromBase64String',
-    handle: (base64Video) => {
-      const video: any = document.getElementById('video')
-      video.src = 'data:video/mp4;base64,' + base64Video
-      video.play()
-    }
-  })
   const userInfo = useAppSelector((state) => state.profile.userInfo)
   React.useEffect(() => {
     console.log(userInfo)
