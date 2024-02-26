@@ -28,11 +28,9 @@ const EventController = {
   }
 }
 
-function loadMediaFromBase64String(base64Media) {
-  var mediaType = 'image/jpeg' // Change to "video/mp4" for video
-  var media = document.createElement(
-    mediaType.startsWith('image') ? 'img' : 'video'
-  )
-  media.src = 'data:' + mediaType + ';base64,' + base64Media
-  document.body.appendChild(media)
+function loadVideoFromBase64String(base64Video) {
+  var video = document.createElement('video')
+  video.src = 'data:video/mp4;base64,' + base64Video
+  video.controls = true
+  document.body.appendChild(video)
 }
