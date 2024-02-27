@@ -1,6 +1,6 @@
-import { colors } from '@/themes/colors';
-import { Theme } from '@/themes/theme';
-import styled from '@emotion/styled';
+import { colors } from '@/themes/colors'
+import { Theme } from '@/themes/theme'
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   max-width: 1124px;
@@ -337,4 +337,4 @@ export const Wrapper = styled.div`
       }
     }
   }
-`;
+`

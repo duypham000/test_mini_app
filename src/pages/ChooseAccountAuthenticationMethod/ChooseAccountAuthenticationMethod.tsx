@@ -2,19 +2,20 @@ import Typography from '@/components/Typography'
 import { Theme } from '@/themes/theme'
 import React from 'react'
 import styles from './styles'
+import { useNavigate } from 'react-router-dom'
+import { UrlInternal } from '@/constants/url-internal'
+import VdscLayout from '@/layouts/VdscLayout'
 
-interface Props {
-  onChooseEkycAuthentication: any
-  onChooseAutoInput: any
-}
+// interface Props {
+//   onChooseEkycAuthentication: any
+//   onChooseAutoInput: any
+// }
 
-const ChooseAccountAuthenticationMethod: React.FC<Props> = (
-  props
-): JSX.Element => {
-  const { onChooseEkycAuthentication, onChooseAutoInput } = props
-
+const ChooseAccountAuthenticationMethod: React.FC = (): JSX.Element => {
+  // const { onChooseEkycAuthentication, onChooseAutoInput } = props
+  const navigator = useNavigate()
   return (
-    <>
+    <VdscLayout>
       <div css={styles.wrapper()}>
         {/* <Container> */}
         <div
@@ -76,7 +77,12 @@ const ChooseAccountAuthenticationMethod: React.FC<Props> = (
         </div>
 
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <div css={styles.btn()} onClick={onChooseEkycAuthentication}>
+          <div
+            css={styles.btn()}
+            onClick={() => {
+              navigator(UrlInternal.CREATE_VDSC_EKYC)
+            }}
+          >
             <div
               css={{
                 position: 'relative',
@@ -123,7 +129,12 @@ const ChooseAccountAuthenticationMethod: React.FC<Props> = (
             </div>
           </div>
 
-          <div css={styles.btn()} onClick={onChooseAutoInput}>
+          <div
+            css={styles.btn()}
+            onClick={() => {
+              navigator(UrlInternal.CREATE_VDSC_AUTO_INPUT)
+            }}
+          >
             <div
               css={{
                 position: 'relative',
@@ -159,7 +170,7 @@ const ChooseAccountAuthenticationMethod: React.FC<Props> = (
         </div>
         {/* </Container> */}
       </div>
-    </>
+    </VdscLayout>
   )
 }
 
