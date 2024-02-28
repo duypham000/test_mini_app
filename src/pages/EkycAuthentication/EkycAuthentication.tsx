@@ -754,7 +754,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
 
                             <label
                               className='upload_image_btn take_image_btn'
-                              htmlFor={`in_front_image`}
+                              htmlFor={`take_in_front_image`}
                               css={{ width: `100%` }}
                             >
                               {`Chụp ảnh`}
@@ -763,7 +763,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                             <input
                               className='take_photo_item_content_upload_image'
                               type={`button`}
-                              id={`in_front_image`}
+                              id={`take_in_front_image`}
                               onClick={() => {
                                 handletakeInfrontImage()
                               }}
@@ -839,7 +839,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
 
                             <label
                               className='upload_image_btn take_image_btn'
-                              htmlFor={`behind_image`}
+                              htmlFor={`take_behind_image`}
                               css={{ width: `100%` }}
                             >
                               {`Chụp ảnh`}
@@ -848,7 +848,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                             <input
                               className='take_photo_item_content_upload_image'
                               type={`button`}
-                              id={`behind_image`}
+                              id={`take_behind_image`}
                               onClick={() => {
                                 handletakeBehindImage()
                               }}
