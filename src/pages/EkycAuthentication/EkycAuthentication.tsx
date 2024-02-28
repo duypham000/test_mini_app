@@ -934,10 +934,14 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                           </div>
 
                           {profileVideo && (
-                            <video
-                              className='in_front_image'
-                              src={URL.createObjectURL(profileVideo)}
-                            />
+                            <video width='240' height='310' controls>
+                              <source
+                                type='video/mp4'
+                                src={URL.createObjectURL(profileVideo)}
+                              >
+                                Your phone does not support the video tag.
+                              </source>
+                            </video>
                           )}
                         </div>
                       </div>
