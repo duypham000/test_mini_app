@@ -937,7 +937,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                             <img
                               alt=''
                               className='in_front_image'
-                              src={URL.createObjectURL(profileImage)}
+                              src={URL.createObjectURL(profileVideo)}
                             />
                           )}
                         </div>
