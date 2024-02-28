@@ -12,7 +12,7 @@ const NativeMethod = {
       args: []
     })
   },
-  videoRecord: ({ callback }) => {
+  recordVideo: ({ callback }) => {
     EventController.set({
       name: 'JsToNative_recordVideo_callback',
       handle: callback

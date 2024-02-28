@@ -224,6 +224,18 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     // setBehindImage(fileImage)
   }
 
+  const handleRecordVideo = () => {
+    NativeMethod.recordVideo({
+      callback: (file) => {
+        const mineType =
+          'video/' + file.name.split('.')[file.name.split('.').length - 1]
+        urltoFile(file.base64, file.name, mineType).then((e) => {
+          setProfileVideo(e)
+        })
+      }
+    })
+  }
+
   const handleUploadBehindImage = () => {
     getImage(setBehindImage)
     // setBehindImage(fileImage)
@@ -248,10 +260,6 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
 
   const handleVisibleTakePhotoOfIDModal = () => {
     setVisibleTakePhotoOfIDModal(true)
-  }
-
-  const handleUseVideoFile = (videoFile: any) => {
-    setProfileVideo(videoFile)
   }
 
   const handleUseImageFileProfile = (imageFile: any) => {
@@ -914,9 +922,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                               cssCustom={{
                                 padding: '7px 27px'
                               }}
-                              onClick={() =>
-                                setVisibleTakePhotoModalProfile(true)
-                              }
+                              onClick={() => handleRecordVideo()}
                             >
                               <Typography
                                 variant='sub_heading_four'
@@ -1046,7 +1052,9 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
           <RecordVideoModal
             visible={visibleTakePhotoModalProfile}
             onCancel={() => setVisibleTakePhotoModalProfile(false)}
-            onUseVideoFile={handleUseVideoFile}
+            onUseVideoFile={() => {
+              return
+            }}
             onUseImageFile={handleUseImageFileProfile}
           />
         )}
