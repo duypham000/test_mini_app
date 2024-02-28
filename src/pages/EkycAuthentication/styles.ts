@@ -303,11 +303,14 @@ export const Wrapper = styled.div`
         background-color: ${colors.blue600} !important;
       }
 
-      @media (max-width: 767px) {
-        padding: 9px 28px;
-        font-size: 14px;
-        line-height: 16px;
-      }
+      padding: 9px 28px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    .take_image_btn {
+      margin-top: 0px;
+      background-color: ${colors.black400};
     }
 
     .gray {

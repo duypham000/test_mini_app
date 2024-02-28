@@ -1,5 +1,4 @@
-import GlobalStyles from '@/styles/GlobalStyles'
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import mainAxios from '@/apis/main-axios'
 import React from 'react'
 import { useDispatch } from 'react-redux'
@@ -32,15 +31,11 @@ function App() {
     })
   }, [])
   return (
-    <GlobalStyles>
-      <BrowserRouter>
-        <Routes>
-          {Object.values(routes).map((route) => (
-            <Route path={route.url} element={route.element} />
-          ))}
-        </Routes>
-      </BrowserRouter>
-    </GlobalStyles>
+    <Routes>
+      {Object.values(routes).map((route) => (
+        <Route path={route.url} element={route.element} />
+      ))}
+    </Routes>
   )
 }
 

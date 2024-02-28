@@ -190,6 +190,18 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
       })
   }, [])
 
+  const getImage = (callback) => {
+    NativeMethod.getImage({
+      callback: (file) => {
+        const mineType =
+          'image/' + file.name.split('.')[file.name.split('.').length - 1]
+        urltoFile(file.base64, file.name, mineType).then((e) => {
+          callback(e)
+        })
+      }
+    })
+  }
+
   const takeImage = (callback) => {
     NativeMethod.takeImage({
       callback: (file) => {
@@ -201,12 +213,23 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
       }
     })
   }
+
   const handleUploadInfrontImage = () => {
-    takeImage(setInfrontImage)
+    getImage(setInfrontImage)
     // setInfrontImage(fileImage)
   }
 
+  const handletakeInfrontImage = () => {
+    takeImage(setInfrontImage)
+    // setBehindImage(fileImage)
+  }
+
   const handleUploadBehindImage = () => {
+    getImage(setBehindImage)
+    // setBehindImage(fileImage)
+  }
+
+  const handletakeBehindImage = () => {
     takeImage(setBehindImage)
     // setBehindImage(fileImage)
   }
@@ -689,11 +712,17 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                           })}
                         >
                           <div className='take_photo_item_content_btn_group'>
-                            {!infrontImage && (
+                            {!infrontImage ? (
                               <img
                                 width={180}
                                 height={104}
                                 src={`https://cdn.simplize.vn/simplizevn/community/images/1679561684069-Group_708.png`}
+                              />
+                            ) : (
+                              <img
+                                width={180}
+                                height={104}
+                                src={URL.createObjectURL(infrontImage)}
                               />
                             )}
 
@@ -702,7 +731,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                               htmlFor={`in_front_image`}
                               css={{ width: `100%` }}
                             >
-                              {`Chụp/tải ảnh`}
+                              {`Tải ảnh`}
                             </label>
 
                             <input
@@ -714,15 +743,25 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                               }}
                               accept={`image/*`}
                             />
-                          </div>
 
-                          {infrontImage && (
-                            <img
-                              alt=''
-                              className='in_front_image'
-                              src={URL.createObjectURL(infrontImage)}
+                            <label
+                              className='upload_image_btn take_image_btn'
+                              htmlFor={`in_front_image`}
+                              css={{ width: `100%` }}
+                            >
+                              {`Chụp ảnh`}
+                            </label>
+
+                            <input
+                              className='take_photo_item_content_upload_image'
+                              type={`button`}
+                              id={`in_front_image`}
+                              onClick={() => {
+                                handletakeInfrontImage()
+                              }}
+                              accept={`image/*`}
                             />
-                          )}
+                          </div>
                         </div>
                       </Col>
 
@@ -758,11 +797,17 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                           })}
                         >
                           <div className='take_photo_item_content_btn_group'>
-                            {!behindImage && (
+                            {!behindImage ? (
                               <img
                                 width={180}
                                 height={104}
                                 src={`https://cdn.simplize.vn/simplizevn/community/images/1679561665112-Group_710.png`}
+                              />
+                            ) : (
+                              <img
+                                width={180}
+                                height={104}
+                                src={URL.createObjectURL(behindImage)}
                               />
                             )}
 
@@ -771,7 +816,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                               htmlFor={`behind_image`}
                               css={{ width: `100%` }}
                             >
-                              {`Chụp/tải ảnh`}
+                              {`Tải ảnh`}
                             </label>
 
                             <input
@@ -784,37 +829,24 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                               accept={`image/*`}
                             />
 
-                            {/* {!isMobile && (
-                              <Button
-                                cssCustom={(theme: Theme) => ({
-                                  backgroundColor: theme.color.dc068,
-                                  width: '100%',
-                                  padding: '9px 0px',
-                                  '&:hover': {
-                                    backgroundColor: theme.color.dc068
-                                  }
-                                })}
-                                onClick={() =>
-                                  setVisibleTakePhotoModalBehind(true)
-                                }
-                              >
-                                <Typography
-                                  variant='sub_heading_four'
-                                  cssCustom={(theme: Theme) => ({
-                                    color: theme.color.dc060
-                                  })}
-                                >{`Chụp ảnh`}</Typography>
-                              </Button>
-                            )} */}
-                          </div>
+                            <label
+                              className='upload_image_btn take_image_btn'
+                              htmlFor={`behind_image`}
+                              css={{ width: `100%` }}
+                            >
+                              {`Chụp ảnh`}
+                            </label>
 
-                          {behindImage && (
-                            <img
-                              alt=''
-                              className='in_front_image'
-                              src={URL.createObjectURL(behindImage)}
+                            <input
+                              className='take_photo_item_content_upload_image'
+                              type={`button`}
+                              id={`behind_image`}
+                              onClick={() => {
+                                handletakeBehindImage()
+                              }}
+                              accept={`image/*`}
                             />
-                          )}
+                          </div>
                         </div>
                       </Col>
                     </Row>

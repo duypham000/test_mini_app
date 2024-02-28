@@ -19,12 +19,26 @@ const NativeMethod = {
     })
     EventController.callHandler({ name: 'JsToNative_recordVideo', args: [] })
   },
+  getVideo: ({ callback }) => {
+    EventController.set({
+      name: 'JsToNative_getVideo_callback',
+      handle: callback
+    })
+    EventController.callHandler({ name: 'JsToNative_getVideo', args: [] })
+  },
   takeImage: ({ callback }) => {
     EventController.set({
       name: 'JsToNative_takeImage_callback',
       handle: callback
     })
     EventController.callHandler({ name: 'JsToNative_takeImage', args: [] })
+  },
+  getImage: ({ callback }) => {
+    EventController.set({
+      name: 'JsToNative_getImage_callback',
+      handle: callback
+    })
+    EventController.callHandler({ name: 'JsToNative_getImage', args: [] })
   },
   addEventListener: ({ name, handle }) => {
     EventController.set({ name, handle })
