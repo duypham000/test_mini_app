@@ -1,5 +1,5 @@
 import GlobalStyles from '@/styles/GlobalStyles'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import mainAxios from '@/apis/main-axios'
 import React from 'react'
 import { useDispatch } from 'react-redux'
@@ -11,6 +11,7 @@ import { Storage } from '@/constants/storage'
 
 function App() {
   const dispath = useDispatch()
+  const navigator = useNavigate()
   React.useEffect(() => {
     const theme = getLocalStorageItem(Storage.theme) || 'dark'
 
@@ -23,6 +24,12 @@ function App() {
         NativeMethod.toast('Lỗi token')
       }
     })()
+    NativeMethod.addEventListener({
+      name: 'JsToNative_navigate',
+      handle: (params) => {
+        navigator(params)
+      }
+    })
   }, [])
   return (
     <GlobalStyles>
