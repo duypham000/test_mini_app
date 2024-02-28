@@ -1,6 +1,5 @@
 import NewPage2 from '@/pages/NewPage2'
 import { UrlInternal } from '@/constants/url-internal'
-import IntegrationModule from '@/pages/Integration/Integration'
 // import VdscAccountCreation from '@/pages/VdscAccountCreation'
 import AutoInput from '@/pages/AutoInput'
 import EkycAuthentication from '@/pages/EkycAuthentication'
@@ -9,13 +8,13 @@ import ChooseAccountAuthenticationMethod from '@/pages/ChooseAccountAuthenticati
 export const routes = {
   HOME_PAGE: {
     url: UrlInternal.HOME_PAGE,
-    element: <IntegrationModule />
+    element: <ChooseAccountAuthenticationMethod />
     // element: <ChooseAccountAuthenticationMethod />
   },
-  CREATE_VDSC: {
-    url: UrlInternal.CREATE_VDSC,
-    element: <ChooseAccountAuthenticationMethod />
-  },
+  // CREATE_VDSC: {
+  //   url: UrlInternal.CREATE_VDSC,
+  //   element: <ChooseAccountAuthenticationMethod />
+  // },
   CREATE_VDSC_AUTO_INPUT: {
     url: UrlInternal.CREATE_VDSC_AUTO_INPUT,
     element: <AutoInput />

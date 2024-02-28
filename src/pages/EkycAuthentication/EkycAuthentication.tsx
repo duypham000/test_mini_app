@@ -120,7 +120,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   const [profileImage, setProfileImage] = React.useState()
   const [errorCount, setErrorCount] = React.useState(0)
   const [currentStep, setCurrentStep] = React.useState(0)
-  const [subCurrentStep, setSubCurrentStep] = React.useState(1)
+  const [subCurrentStep, setSubCurrentStep] = React.useState(0)
   const [infrontImage, setInfrontImage] = React.useState<any>()
   const [behindImage, setBehindImage] = React.useState<any>()
   const [profileVideo, setProfileVideo] = React.useState<any>()
@@ -391,7 +391,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     }
 
     // setTypeDisplay(TYPE_DISPLAY.CHOOSE_ACCOUNT_AUTHENTICATION_METHOD)
-    navigate(UrlInternal.CREATE_VDSC)
+    navigate(UrlInternal.HOME_PAGE)
   }
   const onGoNext = () => {
     if (loadingGoNextEkyc) return
