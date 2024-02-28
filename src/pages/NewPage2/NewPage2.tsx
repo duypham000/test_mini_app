@@ -13,7 +13,7 @@ const NewPage2: React.FC = () => {
       <button onClick={handleToast} css={styles.btn}>
         Toast
       </button>
-      <Link to={UrlInternal.CREATE_VDSC}>
+      <Link to={UrlInternal.HOME_PAGE}>
         <button css={styles.btn}>To Page 1</button>
       </Link>
     </div>

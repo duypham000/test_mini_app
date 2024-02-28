@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   wrapper: () => () => css({}),
@@ -15,7 +15,7 @@ const styles = {
       userSelect: 'none',
 
       '&:hover': {
-        backgroundColor: theme.color.dc038,
+        backgroundColor: theme.color.dc038
       },
 
       [theme.mediaQuery.mobile]: {
@@ -23,9 +23,9 @@ const styles = {
         marginTop: 24,
 
         '&:first-child': {
-          marginTop: 0,
-        },
-      },
+          marginTop: 0
+        }
+      }
     }),
   flexCenter: () => (theme: Theme) =>
     css({
@@ -34,8 +34,8 @@ const styles = {
       flexDirection: 'column',
       alignItems: 'center',
       border: `1px solid ${theme.color.white_opacity5}`,
-      borderTop: 'none',
-    }),
-};
+      borderTop: 'none'
+    })
+}
 
-export default styles;
+export default styles

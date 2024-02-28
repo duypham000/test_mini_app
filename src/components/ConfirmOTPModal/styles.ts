@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { Theme } from '@/themes/theme';
-import { colors } from '@/themes/colors';
+import styled from '@emotion/styled'
+import { css } from '@emotion/react'
+import { Theme } from '@/themes/theme'
+import { colors } from '@/themes/colors'
 
 export const styles = {
   wrapper: () => (theme: Theme) =>
@@ -14,12 +14,12 @@ export const styles = {
       '& .simplize-dialog-header': {
         borderRadius: 10,
         padding: '24px 32px 8px',
-        backgroundColor: theme.color.dc056,
+        backgroundColor: theme.color.dc056
       },
 
       '& .simplize-dialog-content': {
         borderRadius: 10,
-        backgroundColor: theme.color.dc056,
+        backgroundColor: theme.color.dc056
       },
 
       '& .simplize-dialog-close': {
@@ -27,8 +27,8 @@ export const styles = {
         fill: theme.color.black300,
 
         '&:hover': {
-          fill: theme.color.dc017,
-        },
+          fill: theme.color.dc017
+        }
       },
 
       '& .simplize-dialog-body': {
@@ -36,39 +36,39 @@ export const styles = {
         padding: '0px 32px 32px',
 
         '&:hover::-webkit-scrollbar-thumb': {
-          visibility: 'visible',
+          visibility: 'visible'
         },
 
         '&::-webkit-scrollbar': {
           width: 8,
-          height: 8,
+          height: 8
         },
 
         '&::-webkit-scrollbar-track': {
-          borderRadius: 0,
+          borderRadius: 0
         },
 
         '&::-webkit-scrollbar-thumb': {
           borderRadius: 4,
           backgroundColor: theme.color.black400,
-          visibility: 'hidden',
+          visibility: 'hidden'
         },
 
         '&::-webkit-scrollbar-thumb:hover': {
-          backgroundColor: theme.color.black300,
-        },
+          backgroundColor: theme.color.black300
+        }
       },
 
       '& .simplize-dialog-footer': {
-        padding: '0px 32px 32px',
+        padding: '0px 32px 32px'
       },
 
       [theme.mediaQuery.mobile]: {
         marginLeft: 16,
-        marginRight: 16,
-      },
-    }),
-};
+        marginRight: 16
+      }
+    })
+}
 
 export const Wrapper = styled.div`
   .confirm_otp_text {
@@ -178,4 +178,4 @@ export const Wrapper = styled.div`
       }
     }
   }
-`;
+`

@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   select: () => (theme: Theme) =>
@@ -8,7 +8,7 @@ const styles = {
         width: '100%',
         padding: '7px 0px',
         border: `1px solid ${theme.color.dc045}`,
-        borderRadius: 8,
+        borderRadius: 8
       },
 
       '&.simplize-select:not(.simplize-select-customize-input) .simplize-select-selector':
@@ -20,18 +20,18 @@ const styles = {
           fontFamily: theme.fontFamily.fontInter,
           fontSize: theme.fontSize.sub_heading_four,
           lineHeight: theme.lineHeight.sub_heading_four,
-          color: theme.color.dc011,
+          color: theme.color.dc011
         },
 
       '&.simplize-select-show-search.simplize-select:not(.simplize-select-customize-input) .simplize-select-selector input':
         {
-          color: theme.color.dc011,
+          color: theme.color.dc011
         },
 
       '&.simplize-select-single.simplize-select-open .simplize-select-selection-item':
         {
-          color: theme.color.dc011,
-        },
+          color: theme.color.dc011
+        }
     }),
   optionsWrapper: () => (theme: Theme) =>
     css({
@@ -43,12 +43,12 @@ const styles = {
       '& .simplize-select-item-option-selected:not(.simplize-select-item-option-disabled)':
         {
           backgroundColor: `${theme.color.dc028}`,
-          color: theme.color.dc011,
+          color: theme.color.dc011
         },
 
       '& .simplize-select-item-option-active:not(.simplize-select-item-option-disabled)':
         {
-          backgroundColor: `${theme.color.dc028}`,
+          backgroundColor: `${theme.color.dc028}`
         },
 
       '& .simplize-select-item-option': {
@@ -58,36 +58,36 @@ const styles = {
         fontSize: theme.fontSize.sub_heading_four,
         lineHeight: theme.lineHeight.sub_heading_four,
         fontWeight: theme.fontWeight.fw500,
-        margin: '4px 0px',
+        margin: '4px 0px'
       },
 
       '& .rc-virtual-list-holder': {
         overflow: 'auto',
 
         '&:hover::-webkit-scrollbar-thumb': {
-          visibility: 'visible',
+          visibility: 'visible'
         },
 
         '&::-webkit-scrollbar': {
           width: 4,
-          height: 4,
+          height: 4
         },
 
         '&::-webkit-scrollbar-track': {
-          borderRadius: 0,
+          borderRadius: 0
         },
 
         '&::-webkit-scrollbar-thumb': {
           borderRadius: 4,
           backgroundColor: theme.color.black400,
-          visibility: 'hidden',
+          visibility: 'hidden'
         },
 
         '&::-webkit-scrollbar-thumb:hover': {
-          backgroundColor: theme.color.black300,
-        },
-      },
-    }),
-};
+          backgroundColor: theme.color.black300
+        }
+      }
+    })
+}
 
-export default styles;
+export default styles

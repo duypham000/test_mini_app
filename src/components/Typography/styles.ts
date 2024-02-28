@@ -1,7 +1,7 @@
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
 
 const styles = {
-  getWrapperCss: () => () => css(),
-};
+  getWrapperCss: () => () => css()
+}
 
-export default styles;
+export default styles

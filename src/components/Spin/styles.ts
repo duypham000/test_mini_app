@@ -1,28 +1,28 @@
-import { css, keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react'
 
 const circleLoading = keyframes`
   to {
       transform: rotate(360deg);
     }
-  `;
+  `
 
 export const cirSize = {
   small: () => () =>
     css({
       width: 20,
-      height: 20,
+      height: 20
     }),
   default: () => () =>
     css({
       width: 30,
-      height: 30,
+      height: 30
     }),
   large: () => () =>
     css({
       width: 50,
-      height: 50,
-    }),
-};
+      height: 50
+    })
+}
 
 export const base = () => () =>
   css({
@@ -40,6 +40,6 @@ export const base = () => () =>
       border: '4px solid transparent',
       borderRightColor: '#ff6bcb',
       borderBottomColor: '#ffa400',
-      animation: `${circleLoading} 1s forwards infinite linear`,
-    },
-  });
+      animation: `${circleLoading} 1s forwards infinite linear`
+    }
+  })

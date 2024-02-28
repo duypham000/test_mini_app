@@ -1,1 +1,1 @@
-export { default } from './VdscAccountCreation';
+export { default } from './VdscAccountCreation'

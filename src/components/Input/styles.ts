@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   getInputCss:
@@ -22,32 +22,32 @@ const styles = {
 
           '&.simplize-input': {
             '&-disabled': {
-              backgroundColor: `${theme.color.black400}`,
+              backgroundColor: `${theme.color.black400}`
             },
 
             '&:hover:not([disabled])': {
-              borderColor: theme.color.blue500,
+              borderColor: theme.color.blue500
             },
 
             '&:focus:not([disabled])': {
               borderColor: theme.color.blue500,
-              boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)',
-            },
+              boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)'
+            }
           },
 
           '&.simplize-input-affix-wrapper': {
             '&-disabled': {
               borderColor: '${theme.color.black400}',
-              backgroundColor: '${theme.color.black400}',
+              backgroundColor: '${theme.color.black400}'
             },
 
             '&:hover:not(&-disabled)': {
-              borderColor: theme.color.blue500,
+              borderColor: theme.color.blue500
             },
 
             '&-focused': {
               borderColor: theme.color.blue500,
-              boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)',
+              boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)'
             },
 
             '& .simplize-input': {
@@ -59,28 +59,28 @@ const styles = {
                 cursor: 'pointer',
                 marginLeft: '10px',
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'center'
               },
 
               '&-prefix': {
                 marginRight: '10px',
                 display: 'flex',
-                alignItems: 'center',
-              },
-            },
-          },
+                alignItems: 'center'
+              }
+            }
+          }
         },
 
         // size
         props.size === 'small' && {
-          padding: '0px 7px',
+          padding: '0px 7px'
         },
         props.size === 'large' && {
           padding: '6.5px 11px',
           fontSize: theme.fontSize.body_one,
-          lineHeight: theme.lineHeight.body_one,
-        },
-      ]),
-};
+          lineHeight: theme.lineHeight.body_one
+        }
+      ])
+}
 
-export default styles;
+export default styles

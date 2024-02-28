@@ -1,1 +1,1 @@
-export { default } from './VerticalStep';
+export { default } from './VerticalStep'

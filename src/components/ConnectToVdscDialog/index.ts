@@ -1,1 +1,1 @@
-export { default } from './ConnectToVdscDialog';
+export { default } from './ConnectToVdscDialog'

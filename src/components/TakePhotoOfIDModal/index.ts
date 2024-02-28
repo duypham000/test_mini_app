@@ -1,1 +1,1 @@
-export { default } from './TakePhotoOfIDModal';
+export { default } from './TakePhotoOfIDModal'

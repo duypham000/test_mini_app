@@ -33,7 +33,7 @@ const ConnectToVdscDialog: React.FC = (): JSX.Element => {
           css={styles.btnCreate()}
           onClick={() => {
             dispatch(setVisibleConnectToVdsc(false))
-            navigate(`${UrlInternal.CREATE_VDSC}`)
+            navigate(`${UrlInternal.HOME_PAGE}`)
           }}
         >
           <Typography

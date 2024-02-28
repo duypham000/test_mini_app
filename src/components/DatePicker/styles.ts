@@ -1,10 +1,10 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   datePickerWrapper: () => () =>
     css({
-      width: '100%',
+      width: '100%'
     }),
   datePicker: () => (theme: Theme) =>
     css({
@@ -21,22 +21,22 @@ const styles = {
       color: theme.color.dc011,
       transition: 'all 0.3s',
       '&:hover': {
-        borderColor: theme.color.blue500,
+        borderColor: theme.color.blue500
       },
       '&:focus': {
         borderColor: theme.color.blue500,
-        boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)',
+        boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)'
       },
       '&::placeholder': {
-        color: theme.color.dc014,
-      },
+        color: theme.color.dc014
+      }
     }),
   datePickerIcon: () => () =>
     css({
       position: 'absolute',
       right: 16,
-      top: -33,
-    }),
-};
+      top: -33
+    })
+}
 
-export default styles;
+export default styles

@@ -3,5 +3,5 @@ export default function canUseDom() {
     typeof window !== 'undefined' &&
     window.document &&
     window.document.createElement
-  );
+  )
 }

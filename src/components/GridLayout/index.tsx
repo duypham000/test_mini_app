@@ -3,8 +3,8 @@
 
 /* @remove-on-es-build-end */
 
-export { default as Col } from './components/grid/col';
+export { default as Col } from './components/grid/col'
 
-export { default as Grid } from './components/grid';
+export { default as Grid } from './components/grid'
 
-export { default as Row } from './components/grid/row';
+export { default as Row } from './components/grid/row'

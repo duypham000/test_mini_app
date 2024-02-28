@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   input: () => (theme: Theme) =>
@@ -19,32 +19,32 @@ const styles = {
 
       '&.simplize-input': {
         '&-disabled': {
-          backgroundColor: '#d9d9d9',
+          backgroundColor: '#d9d9d9'
         },
 
         '&:hover:not([disabled])': {
-          borderColor: theme.color.simplizeBlue,
+          borderColor: theme.color.simplizeBlue
         },
 
         '&:focus:not([disabled])': {
           borderColor: theme.color.simplizeBlue,
-          boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)',
-        },
+          boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)'
+        }
       },
 
       '&.simplize-input-affix-wrapper': {
         '&-disabled': {
           borderColor: '#d9d9d9',
-          backgroundColor: '#d9d9d9',
+          backgroundColor: '#d9d9d9'
         },
 
         '&:hover:not(&-disabled)': {
-          borderColor: theme.color.simplizeBlue,
+          borderColor: theme.color.simplizeBlue
         },
 
         '&-focused': {
           borderColor: theme.color.simplizeBlue,
-          boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)',
+          boxShadow: '0 0 0 2px rgba(24, 144, 255, .2)'
         },
 
         '& .simplize-input': {
@@ -61,21 +61,21 @@ const styles = {
             cursor: 'pointer',
             marginLeft: '10px',
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           },
 
           '&-prefix': {
             marginRight: '10px',
             display: 'flex',
-            alignItems: 'center',
-          },
-        },
+            alignItems: 'center'
+          }
+        }
       },
 
       '& .simplize-input-clear-icon': {
-        color: theme.color.dc011,
-      },
-    }),
-};
+        color: theme.color.dc011
+      }
+    })
+}
 
-export default styles;
+export default styles

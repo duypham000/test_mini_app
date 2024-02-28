@@ -1,2 +1,2 @@
-export { default } from './RcSelect';
-export * from './RcSelect';
+export { default } from './RcSelect'
+export * from './RcSelect'

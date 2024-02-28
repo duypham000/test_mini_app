@@ -139,7 +139,7 @@ const AutoInput: React.FC = (): JSX.Element => {
 
   const handleGoBackAutoInput = () => {
     if (currentStepAutoInput === 0) {
-      navigate(UrlInternal.CREATE_VDSC)
+      navigate(UrlInternal.HOME_PAGE)
       // setTypeDisplay(TYPE_DISPLAY.CHOOSE_ACCOUNT_AUTHENTICATION_METHOD)
       return
     }

@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import styled from '@emotion/styled';
+import { Theme } from '@/themes/theme'
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   .personal_information_container {
@@ -341,4 +341,4 @@ export const Wrapper = styled.div`
       margin-right: 18px;
     }
   }
-`;
+`

@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
-import ResponsiveObserve, { ScreenMap } from '../responsiveObserve';
+import { useEffect, useState } from 'react'
+import ResponsiveObserve, { ScreenMap } from '../responsiveObserve'
 
 function useBreakpoint(): ScreenMap {
-  const [screens, setScreens] = useState<ScreenMap>({});
+  const [screens, setScreens] = useState<ScreenMap>({})
 
   useEffect(() => {
     const token = ResponsiveObserve.subscribe((supportScreens) => {
-      setScreens(supportScreens);
-    });
+      setScreens(supportScreens)
+    })
 
-    return () => ResponsiveObserve.unsubscribe(token);
-  }, []);
+    return () => ResponsiveObserve.unsubscribe(token)
+  }, [])
 
-  return screens;
+  return screens
 }
 
-export default useBreakpoint;
+export default useBreakpoint

@@ -1,1 +1,1 @@
-export { default } from './AuthenticationMethodModal';
+export { default } from './AuthenticationMethodModal'

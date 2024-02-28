@@ -1,9 +1,9 @@
 export interface IResponse<T> {
-  data: T;
-  message: string;
-  status: number;
-  total?: number;
+  data: T
+  message: string
+  status: number
+  total?: number
   meta?: {
-    nextToken: string;
-  };
+    nextToken: string
+  }
 }

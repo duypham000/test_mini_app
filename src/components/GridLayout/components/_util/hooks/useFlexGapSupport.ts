@@ -1,13 +1,13 @@
-import * as React from 'react';
-import { detectFlexGapSupported } from '../styleChecker';
+import * as React from 'react'
+import { detectFlexGapSupported } from '../styleChecker'
 
 const useFlexGapSupport = () => {
-  const [flexible, setFlexible] = React.useState(false);
+  const [flexible, setFlexible] = React.useState(false)
   React.useEffect(() => {
-    setFlexible(detectFlexGapSupported());
-  }, []);
+    setFlexible(detectFlexGapSupported())
+  }, [])
 
-  return flexible;
-};
+  return flexible
+}
 
-export default useFlexGapSupport;
+export default useFlexGapSupport

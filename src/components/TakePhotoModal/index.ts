@@ -1,1 +1,1 @@
-export { default } from './TakePhotoModal';
+export { default } from './TakePhotoModal'

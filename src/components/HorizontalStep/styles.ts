@@ -1,5 +1,5 @@
-import { Theme } from '@/themes/theme';
-import { css } from '@emotion/react';
+import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 
 const styles = {
   wrapper: () => (theme: Theme) =>
@@ -19,8 +19,8 @@ const styles = {
         left: 'calc(50%)',
         top: 0,
         transform: 'translateX(-50%)',
-        backgroundColor: theme.color.dc045,
-      },
+        backgroundColor: theme.color.dc045
+      }
     }),
   step: (params?: { active: boolean }) => (theme: Theme) =>
     css([
@@ -37,8 +37,8 @@ const styles = {
           top: -30,
           transform: 'translateX(-50%)',
           backgroundColor: theme.color.dc001,
-          border: `2px solid ${theme.color.dc045}`,
-        },
+          border: `2px solid ${theme.color.dc045}`
+        }
       },
       params?.active && {
         '&::after': {
@@ -48,9 +48,9 @@ const styles = {
           width: 206,
           left: 'calc(50% + 6px)',
           top: -23,
-          backgroundColor: theme.color.orange500,
-        },
-      },
+          backgroundColor: theme.color.orange500
+        }
+      }
     ]),
   dot: () => (theme: Theme) =>
     css({
@@ -64,7 +64,7 @@ const styles = {
         left: '50%',
         top: -30,
         transform: 'translateX(-50%)',
-        border: `2px solid ${theme.color.orange500}`,
+        border: `2px solid ${theme.color.orange500}`
       },
       '&::after': {
         content: "''",
@@ -75,9 +75,9 @@ const styles = {
         left: '50%',
         top: -26,
         transform: 'translateX(-50%)',
-        backgroundColor: theme.color.orange500,
-      },
-    }),
-};
+        backgroundColor: theme.color.orange500
+      }
+    })
+}
 
-export default styles;
+export default styles

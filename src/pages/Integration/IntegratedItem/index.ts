@@ -1,1 +1,1 @@
-export { default } from './IntegratedItem';
+export { default } from './IntegratedItem'

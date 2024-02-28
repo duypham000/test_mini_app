@@ -1,12 +1,12 @@
-import Row from './row';
-import Col from './col';
-import useBreakpoint from '../_util/hooks/useBreakpoint';
+import Row from './row'
+import Col from './col'
+import useBreakpoint from '../_util/hooks/useBreakpoint'
 
-export type { RowProps } from './row';
-export type { ColProps, ColSize } from './col';
+export type { RowProps } from './row'
+export type { ColProps, ColSize } from './col'
 
-export { Row, Col };
+export { Row, Col }
 
-const Grid = { useBreakpoint };
+const Grid = { useBreakpoint }
 
-export default Grid;
+export default Grid

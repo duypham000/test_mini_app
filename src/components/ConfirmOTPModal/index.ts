@@ -1,1 +1,1 @@
-export { default } from './ConfirmOTPModal';
+export { default } from './ConfirmOTPModal'

@@ -1,35 +1,35 @@
-import canUseDom from './hooks/canUseDom';
-import { isStyleSupport } from './hooks/styleChecker';
+import canUseDom from './hooks/canUseDom'
+import { isStyleSupport } from './hooks/styleChecker'
 
 export const canUseDocElement = () =>
-  canUseDom() && window.document.documentElement;
+  canUseDom() && window.document.documentElement
 
-export { isStyleSupport };
+export { isStyleSupport }
 
-let flexGapSupported: boolean | undefined;
+let flexGapSupported: boolean | undefined
 export const detectFlexGapSupported = () => {
   if (!canUseDocElement()) {
-    return false;
+    return false
   }
 
   if (flexGapSupported !== undefined) {
-    return flexGapSupported;
+    return flexGapSupported
   }
 
   // create flex container with row-gap set
-  const flex = document.createElement('div');
-  flex.style.display = 'flex';
-  flex.style.flexDirection = 'column';
-  flex.style.rowGap = '1px';
+  const flex = document.createElement('div')
+  flex.style.display = 'flex'
+  flex.style.flexDirection = 'column'
+  flex.style.rowGap = '1px'
 
   // create two, elements inside it
-  flex.appendChild(document.createElement('div'));
-  flex.appendChild(document.createElement('div'));
+  flex.appendChild(document.createElement('div'))
+  flex.appendChild(document.createElement('div'))
 
   // append to the DOM (needed to obtain scrollHeight)
-  document.body.appendChild(flex);
-  flexGapSupported = flex.scrollHeight === 1; // flex container should be 1px high from the row-gap
-  document.body.removeChild(flex);
+  document.body.appendChild(flex)
+  flexGapSupported = flex.scrollHeight === 1 // flex container should be 1px high from the row-gap
+  document.body.removeChild(flex)
 
-  return flexGapSupported;
-};
+  return flexGapSupported
+}

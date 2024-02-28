@@ -1,1 +1,1 @@
-export { default } from './HorizontalStep';
+export { default } from './HorizontalStep'

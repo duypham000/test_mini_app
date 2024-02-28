@@ -1,1 +1,1 @@
-export * from './integration-api';
+export * from './integration-api'

@@ -1,1 +1,1 @@
-export { default } from './EkycAuthentication';
+export { default } from './EkycAuthentication'

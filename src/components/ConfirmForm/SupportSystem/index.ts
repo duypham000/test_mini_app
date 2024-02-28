@@ -1,1 +1,1 @@
-export { default } from './SupportSystem';
+export { default } from './SupportSystem'
