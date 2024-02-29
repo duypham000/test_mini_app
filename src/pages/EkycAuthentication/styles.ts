@@ -216,7 +216,6 @@ export const Wrapper = styled.div`
   }
 
   .take_photo_item_content {
-    background-color: ${({ theme }: { theme: Theme }) => theme.color.dc038};
     border-radius: 20px;
     height: 240px;
     overflow: hidden;
@@ -226,19 +225,6 @@ export const Wrapper = styled.div`
     position: relative;
     transition: 0.3s all ease-out;
 
-    &.has_img {
-      background-color: transparent;
-    }
-
-    &:hover .take_photo_item_content_btn_group {
-      z-index: 1;
-    }
-
-    &:hover .in_front_image {
-      filter: blur(2px);
-      -webkit-filter: blur(2px);
-    }
-
     .in_front_image {
       position: absolute;
       width: 100%;
@@ -246,11 +232,6 @@ export const Wrapper = styled.div`
       object-fit: contain;
       /* filter: blur(2px); */
       /* -webkit-filter: blur(2px); */
-    }
-
-    @media (max-width: 767px) {
-      background-color: ${({ theme }: { theme: Theme }) => theme.color.dc038};
-      border-radius: 10px;
     }
   }
 

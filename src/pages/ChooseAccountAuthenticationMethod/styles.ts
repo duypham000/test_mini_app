@@ -5,27 +5,12 @@ const styles = {
   wrapper: () => () => css({}),
   btn: () => (theme: Theme) =>
     css({
-      width: 'calc(50% - 36px)',
       display: 'flex',
       flexDirection: 'column',
       backgroundColor: theme.color.dc023,
       cursor: 'pointer',
       borderRadius: 10,
-      boxShadow: `0px 0px 10px ${theme.color.black_opacity10}`,
-      userSelect: 'none',
-
-      '&:hover': {
-        backgroundColor: theme.color.dc038
-      },
-
-      [theme.mediaQuery.mobile]: {
-        width: '100%',
-        marginTop: 24,
-
-        '&:first-child': {
-          marginTop: 0
-        }
-      }
+      userSelect: 'none'
     }),
   flexCenter: () => (theme: Theme) =>
     css({

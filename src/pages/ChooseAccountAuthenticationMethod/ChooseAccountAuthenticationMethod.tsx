@@ -5,6 +5,8 @@ import styles from './styles'
 import { useNavigate } from 'react-router-dom'
 import { UrlInternal } from '@/constants/url-internal'
 import VdscLayout from '@/layouts/VdscLayout'
+import { Col, Row } from '@/components/GridLayout'
+import { css } from '@emotion/react'
 
 // interface Props {
 //   onChooseEkycAuthentication: any
@@ -76,98 +78,106 @@ const ChooseAccountAuthenticationMethod: React.FC = (): JSX.Element => {
           >{`Chọn hình thức xác thực tài khoản`}</Typography>
         </div>
 
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <div
-            css={styles.btn()}
-            onClick={() => {
-              navigator(UrlInternal.CREATE_VDSC_EKYC)
-            }}
-          >
+        <Row gutter={16}>
+          <Col span={12}>
             <div
-              css={{
-                position: 'relative',
-                width: '100%',
-                overflow: 'hidden',
-                aspectRatio: '1.88'
+              css={styles.btn()}
+              onClick={() => {
+                navigator(UrlInternal.CREATE_VDSC_EKYC)
               }}
             >
-              <img
+              <div
                 css={{
-                  position: 'absolute',
+                  position: 'relative',
                   width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
+                  overflow: 'hidden',
+                  aspectRatio: '1.88'
                 }}
-                src={`https://cdn.simplize.vn/simplizevn/community/images/1655366507626-1.png`}
-              />
-            </div>
-
-            <div css={styles.flexCenter()}>
-              <Typography
-                variant={'heading_three'}
-                variantMobile='heading_fourth'
-                cssCustom={(theme: Theme) => ({
-                  marginBottom: 2,
-
-                  [theme.mediaQuery.mobile]: {
-                    padding: `0px 16px`
-                  }
-                })}
               >
-                {`Xác thực bằng công nghệ eKYC`}
-              </Typography>
+                <img
+                  css={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                  src={`https://cdn.simplize.vn/simplizevn/community/images/1655366507626-1.png`}
+                />
+              </div>
 
-              <Typography
-                variant={'body_two'}
-                variantMobile='caption'
-                cssCustom={(theme: Theme) => ({
-                  [theme.mediaQuery.mobile]: {
-                    padding: `0px 16px`
+              <div css={styles.flexCenter()}>
+                <Typography
+                  variant={'sub_heading_three'}
+                  variantMobile='sub_heading_three'
+                  cssCustom={() => ({
+                    marginBottom: 2
+                  })}
+                >
+                  {`Xác thực bằng eKYC`}
+                </Typography>
+
+                <Typography
+                  variant={'small_one'}
+                  variantMobile='small_one'
+                  cssCustom={(theme: Theme) =>
+                    css({
+                      padding: `0px 16px`,
+                      color: theme.color.gray300ToGray400,
+                      textAlign: 'center'
+                    })
                   }
-                })}
-              >{`Nếu thiết bị của bạn có camera (khuyên dùng)`}</Typography>
+                >{`Nếu thiết bị của bạn có camera (khuyên dùng)`}</Typography>
+              </div>
             </div>
-          </div>
-
-          <div
-            css={styles.btn()}
-            onClick={() => {
-              navigator(UrlInternal.CREATE_VDSC_AUTO_INPUT)
-            }}
-          >
+          </Col>
+          <Col span={12}>
             <div
-              css={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '1.88',
-                overflow: 'hidden'
+              css={styles.btn()}
+              onClick={() => {
+                navigator(UrlInternal.CREATE_VDSC_AUTO_INPUT)
               }}
             >
-              <img
+              <div
                 css={{
-                  position: 'absolute',
+                  position: 'relative',
                   width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
+                  aspectRatio: '1.88',
+                  overflow: 'hidden'
                 }}
-                src={`https://cdn.simplize.vn/simplizevn/community/images/1655366526961-2.png`}
-              />
-            </div>
+              >
+                <img
+                  css={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                  src={`https://cdn.simplize.vn/simplizevn/community/images/1655366526961-2.png`}
+                />
+              </div>
 
-            <div css={styles.flexCenter()}>
-              <Typography
-                variant={'heading_three'}
-                variantMobile='heading_fourth'
-                cssCustom={{ marginBottom: 2 }}
-              >{`Tự nhập liệu`}</Typography>
+              <div css={styles.flexCenter()}>
+                <Typography
+                  variant={'sub_heading_three'}
+                  variantMobile='sub_heading_three'
+                  cssCustom={{ marginBottom: 2 }}
+                >{`Tự nhập liệu`}</Typography>
 
-              <Typography
-                variant={'body_two'}
-                variantMobile='caption'
-              >{`Nếu thiết bị của bạn không có camera`}</Typography>
+                <Typography
+                  variant={'small_one'}
+                  variantMobile='small_one'
+                  cssCustom={(theme: Theme) =>
+                    css({
+                      padding: `0px 16px`,
+                      color: theme.color.gray300ToGray400,
+                      textAlign: 'center'
+                    })
+                  }
+                >{`Nếu thiết bị của bạn không có camera`}</Typography>
+              </div>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
         {/* </Container> */}
       </div>
     </VdscLayout>

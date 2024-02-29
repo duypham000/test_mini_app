@@ -7,7 +7,6 @@ import RegisterService from '@/components/RegisterService'
 import ConfirmForm from '@/components/ConfirmForm'
 import classNames from 'classnames'
 import TakePhotoOfIDModal from '@/components/TakePhotoOfIDModal'
-import RecordVideoModal from '@/components/RecordVideoModal'
 import Typography from '@/components/Typography'
 import { Theme } from '@/themes/theme'
 import Button from '@/components/Button'
@@ -25,26 +24,9 @@ import ConfirmOTPModal from '@/components/ConfirmOTPModal'
 import { UrlInternal } from '@/constants/url-internal'
 import { useNavigate } from 'react-router-dom'
 import VdscLayout from '@/layouts/VdscLayout'
-
-// interface Props {
-//   dataOpenStockAccount: any
-//   setDataOpenStockAccount: any
-//   currentStep: number
-//   subCurrentStep: number
-//   onGoBack: any
-//   onGoNext: any
-//   onRefreshClientId: any
-//   infrontImage: any
-//   setInfrontImage: any
-//   behindImage: any
-//   setBehindImage: any
-//   profileVideo: any
-//   setProfileVideo: any
-//   issuePlaceList: any
-//   provinceList: any
-//   bankList: any
-//   loadingGoNext?: boolean
-// }
+import { EmptyVideoIcon } from '@/icons/EmptyVideoIcon'
+import { colors } from '@/themes/colors'
+import BorderCorner from '@/components/BorderCorner'
 
 const {
   ekycFaceLiveVideo,
@@ -58,25 +40,6 @@ const {
 } = vdscApi
 
 const EkycAuthentication: React.FC = (): JSX.Element => {
-  // const {
-  //   dataOpenStockAccount,
-  //   setDataOpenStockAccount,
-  //   currentStep,
-  //   subCurrentStep,
-  //   onGoBack,
-  //   onGoNext,
-  //   onRefreshClientId,
-  //   infrontImage,
-  //   setInfrontImage,
-  //   behindImage,
-  //   setBehindImage,
-  //   profileVideo,
-  //   setProfileVideo,
-  //   issuePlaceList,
-  //   provinceList,
-  //   bankList
-  // } = props
-
   const isDark = useAppSelector((state) => state.theme.isDark)
   const navigate = useNavigate()
 
@@ -112,14 +75,14 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     React.useState(false)
   const [visibleTakePhotoModalBehind, setVisibleTakePhotoModalBehind] =
     React.useState(false)
-  const [visibleTakePhotoModalProfile, setVisibleTakePhotoModalProfile] =
-    React.useState(false)
+  // const [visibleTakePhotoModalProfile, setVisibleTakePhotoModalProfile] =
+  //   React.useState(false)
   const [visibleTakePhotoOfIDModal, setVisibleTakePhotoOfIDModal] =
     React.useState(false)
   const [loadingGoNextEkyc, setLoadingGoNextEkyc] = React.useState(false)
-  const [profileImage, setProfileImage] = React.useState()
+  // const [profileImage, setProfileImage] = React.useState()
   const [errorCount, setErrorCount] = React.useState(0)
-  const [currentStep, setCurrentStep] = React.useState(0)
+  const [currentStep, setCurrentStep] = React.useState(1)
   const [subCurrentStep, setSubCurrentStep] = React.useState(0)
   const [infrontImage, setInfrontImage] = React.useState<any>()
   const [behindImage, setBehindImage] = React.useState<any>()
@@ -262,9 +225,9 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     setVisibleTakePhotoOfIDModal(true)
   }
 
-  const handleUseImageFileProfile = (imageFile: any) => {
-    setProfileImage(imageFile)
-  }
+  // const handleUseImageFileProfile = (imageFile: any) => {
+  //   setProfileImage(imageFile)
+  // }
 
   const handleCancelAuthenticationMethodModal = () => {
     setVisibleAuthMethodModal(false)
@@ -633,7 +596,12 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
               <VerticalStep step={subCurrentStep} />
             </div>
 
-            <div className='ekyc_authentication_right_form'>
+            <div
+              css={{
+                width: '100%',
+                height: '100%'
+              }}
+            >
               <div className='auto_input_steps'>
                 <HorizontalStep step={currentStep} />
               </div>
@@ -697,8 +665,8 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                       </div>
                     </div>
 
-                    <Row className='take_photo_group'>
-                      <Col span={24} className='take_photo_item'>
+                    <Row gutter={16} className='take_photo_group'>
+                      <Col span={12} className='take_photo_item'>
                         <div
                           css={{
                             display: 'flex',
@@ -715,53 +683,76 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                         </div>
 
                         <div
-                          className={classNames(`take_photo_item_content`, {
-                            has_img: Boolean(infrontImage)
-                          })}
+                          css={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
                         >
-                          <div className='take_photo_item_content_btn_group'>
+                          <div
+                            css={{
+                              display: 'flex',
+                              flexDirection: 'column'
+                            }}
+                          >
                             {!infrontImage ? (
-                              <img
-                                width={180}
-                                height={104}
-                                src={`https://cdn.simplize.vn/simplizevn/community/images/1679561684069-Group_708.png`}
-                              />
+                              <div
+                                css={(theme: Theme) =>
+                                  css({
+                                    padding: 10,
+                                    backgroundColor: theme.color.dc038,
+                                    borderRadius: 8,
+                                    marginBottom: 16
+                                  })
+                                }
+                              >
+                                <BorderCorner
+                                  cssCustom={() =>
+                                    css({
+                                      width: 136,
+                                      height: 94,
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center'
+                                    })
+                                  }
+                                >
+                                  <img
+                                    width={112}
+                                    height={62}
+                                    src={`https://cdn.simplize.vn/simplizevn/community/images/1679561684069-Group_708.png`}
+                                  />
+                                </BorderCorner>
+                              </div>
                             ) : (
                               <img
-                                width={180}
-                                height={104}
+                                width={156}
+                                height={114}
+                                css={{
+                                  borderRadius: 8,
+                                  marginBottom: 16
+                                }}
                                 src={URL.createObjectURL(infrontImage)}
                               />
                             )}
 
                             <label
-                              className='upload_image_btn'
-                              htmlFor={`in_front_image`}
-                              css={{ width: `100%` }}
-                            >
-                              {`Tải ảnh`}
-                            </label>
-
-                            <input
-                              className='take_photo_item_content_upload_image'
-                              type={`button`}
-                              id={`in_front_image`}
-                              onClick={() => {
-                                handleUploadInfrontImage()
-                              }}
-                              accept={`image/*`}
-                            />
-
-                            <label
-                              className='upload_image_btn take_image_btn'
                               htmlFor={`take_in_front_image`}
-                              css={{ width: `100%` }}
+                              css={(theme: Theme) => ({
+                                width: `100%`,
+                                textAlign: 'center',
+                                color: theme.color.gray100,
+                                backgroundColor: theme.color.blue500,
+                                padding: '9px 50px',
+                                borderRadius: 8,
+                                marginBottom: 8
+                              })}
                             >
-                              {`Chụp ảnh`}
+                              <Typography variant='caption_three'>{`Chụp ảnh`}</Typography>
                             </label>
 
                             <input
-                              className='take_photo_item_content_upload_image'
+                              css={{ display: 'none' }}
                               type={`button`}
                               id={`take_in_front_image`}
                               onClick={() => {
@@ -769,21 +760,34 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                               }}
                               accept={`image/*`}
                             />
+                            <label
+                              css={(theme: Theme) => ({
+                                width: `100%`,
+                                textAlign: 'center',
+                                color: theme.color.blue500,
+                                backgroundColor: 'transparent',
+                                padding: '9px 50px',
+                                borderRadius: 8
+                              })}
+                              htmlFor={`in_front_image`}
+                            >
+                              {`Tải ảnh`}
+                            </label>
+
+                            <input
+                              css={{ display: 'none' }}
+                              type={`button`}
+                              id={`in_front_image`}
+                              onClick={() => {
+                                handleUploadInfrontImage()
+                              }}
+                              accept={`image/*`}
+                            />
                           </div>
                         </div>
                       </Col>
 
-                      <Col
-                        span={24}
-                        className='take_photo_item'
-                        css={(theme: Theme) =>
-                          css({
-                            [theme.mediaQuery.mobile]: {
-                              marginTop: 24
-                            }
-                          })
-                        }
-                      >
+                      <Col span={12} className='take_photo_item'>
                         <div
                           css={{
                             display: 'flex',
@@ -800,57 +804,102 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                         </div>
 
                         <div
-                          className={classNames(`take_photo_item_content`, {
-                            has_img: Boolean(behindImage)
-                          })}
+                          css={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
                         >
-                          <div className='take_photo_item_content_btn_group'>
+                          <div
+                            css={{
+                              display: 'flex',
+                              flexDirection: 'column'
+                            }}
+                          >
                             {!behindImage ? (
-                              <img
-                                width={180}
-                                height={104}
-                                src={`https://cdn.simplize.vn/simplizevn/community/images/1679561665112-Group_710.png`}
-                              />
+                              <div
+                                css={(theme: Theme) =>
+                                  css({
+                                    padding: 10,
+                                    backgroundColor: theme.color.dc038,
+                                    borderRadius: 8,
+                                    marginBottom: 16
+                                  })
+                                }
+                              >
+                                <BorderCorner
+                                  cssCustom={() =>
+                                    css({
+                                      width: 136,
+                                      height: 94,
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center'
+                                    })
+                                  }
+                                >
+                                  <img
+                                    width={112}
+                                    height={62}
+                                    src={`https://cdn.simplize.vn/simplizevn/community/images/1679561684069-Group_708.png`}
+                                  />
+                                </BorderCorner>
+                              </div>
                             ) : (
                               <img
-                                width={180}
-                                height={104}
+                                width={156}
+                                height={114}
+                                css={{
+                                  borderRadius: 8,
+                                  marginBottom: 16
+                                }}
                                 src={URL.createObjectURL(behindImage)}
                               />
                             )}
 
                             <label
-                              className='upload_image_btn'
-                              htmlFor={`behind_image`}
-                              css={{ width: `100%` }}
-                            >
-                              {`Tải ảnh`}
-                            </label>
-
-                            <input
-                              className='take_photo_item_content_upload_image'
-                              type={`button`}
-                              id={`behind_image`}
-                              onClick={() => {
-                                handleUploadBehindImage()
-                              }}
-                              accept={`image/*`}
-                            />
-
-                            <label
-                              className='upload_image_btn take_image_btn'
                               htmlFor={`take_behind_image`}
-                              css={{ width: `100%` }}
+                              css={(theme: Theme) => ({
+                                width: `100%`,
+                                textAlign: 'center',
+                                color: theme.color.gray100,
+                                backgroundColor: theme.color.blue500,
+                                padding: '9px 50px',
+                                borderRadius: 8,
+                                marginBottom: 8
+                              })}
                             >
-                              {`Chụp ảnh`}
+                              <Typography variant='caption_three'>{`Chụp ảnh`}</Typography>
                             </label>
 
                             <input
-                              className='take_photo_item_content_upload_image'
+                              css={{ display: 'none' }}
                               type={`button`}
                               id={`take_behind_image`}
                               onClick={() => {
                                 handletakeBehindImage()
+                              }}
+                              accept={`image/*`}
+                            />
+                            <label
+                              css={(theme: Theme) => ({
+                                width: `100%`,
+                                textAlign: 'center',
+                                color: theme.color.blue500,
+                                backgroundColor: 'transparent',
+                                padding: '9px 50px',
+                                borderRadius: 8
+                              })}
+                              htmlFor={`behind_image`}
+                            >
+                              {`Tải ảnh`}
+                            </label>
+                            <input
+                              css={{ display: 'none' }}
+                              type={`button`}
+                              id={`behind_image`}
+                              onClick={() => {
+                                handleUploadBehindImage()
                               }}
                               accept={`image/*`}
                             />
@@ -896,7 +945,14 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                     </div>
 
                     <div className='take_photo_group center'>
-                      <div className='take_photo_item'>
+                      <div
+                        className='take_photo_item'
+                        css={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          flexDirection: 'column'
+                        }}
+                      >
                         <div
                           css={{
                             display: 'flex',
@@ -913,36 +969,67 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                         </div>
 
                         <div
-                          className={classNames(`take_photo_item_content`, {
-                            has_img: Boolean(profileImage)
-                          })}
+                          css={() => (theme: Theme) =>
+                            css({
+                              flexDirection: 'column',
+                              width: 156,
+                              height: 'auto !important',
+                              padding: 10,
+                              display: 'flex',
+                              alignItems: 'center',
+                              backgroundColor: theme.color.white_opacity10,
+                              borderRadius: 8,
+                              marginBottom: 16
+                            })
+                          }
                         >
-                          <div className='take_photo_item_content_btn_group'>
-                            <Button
-                              cssCustom={{
-                                padding: '7px 27px'
-                              }}
-                              onClick={() => handleRecordVideo()}
-                            >
-                              <Typography
-                                variant='sub_heading_four'
-                                cssCustom={(theme: Theme) => ({
-                                  color: theme.color.gray100
-                                })}
-                              >{`Quay video`}</Typography>
-                            </Button>
-                          </div>
-
-                          {profileVideo && (
-                            <video
-                              width='240'
-                              height='310'
-                              controls
-                              src={URL.createObjectURL(profileVideo)}
-                            >
-                              Your phone does not support the video tag.
-                            </video>
-                          )}
+                          <BorderCorner
+                            cssCustom={() =>
+                              css({
+                                padding: '22px 18px'
+                              })
+                            }
+                          >
+                            {profileVideo ? (
+                              <video
+                                width='100'
+                                height='150'
+                                css={{
+                                  borderRadius: 8
+                                }}
+                                src={URL.createObjectURL(profileVideo)}
+                              >
+                                Your phone does not support the video tag.
+                              </video>
+                            ) : (
+                              <div
+                                css={{
+                                  padding: '43px 18px',
+                                  background: colors.black400,
+                                  borderRadius: 8,
+                                  width: 100,
+                                  height: 150
+                                }}
+                              >
+                                <EmptyVideoIcon />
+                              </div>
+                            )}
+                          </BorderCorner>
+                        </div>
+                        <div className='take_photo_item_content_btn_group'>
+                          <Button
+                            cssCustom={{
+                              padding: '7px 27px'
+                            }}
+                            onClick={() => handleRecordVideo()}
+                          >
+                            <Typography
+                              variant='sub_heading_four'
+                              cssCustom={(theme: Theme) => ({
+                                color: theme.color.gray100
+                              })}
+                            >{`Quay video`}</Typography>
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -964,7 +1051,13 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
               </div>
 
               {subCurrentStep !== 2 && (
-                <div className='ekyc_authentication_btn_group'>
+                <div
+                  css={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: 'auto'
+                  }}
+                >
                   <Button
                     cssCustom={(theme: Theme) => ({
                       width: 102,
@@ -1051,7 +1144,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
           />
         )}
 
-        {visibleTakePhotoModalProfile && (
+        {/* {visibleTakePhotoModalProfile && (
           <RecordVideoModal
             visible={visibleTakePhotoModalProfile}
             onCancel={() => setVisibleTakePhotoModalProfile(false)}
@@ -1060,7 +1153,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
             }}
             onUseImageFile={handleUseImageFileProfile}
           />
-        )}
+        )} */}
 
         <TakePhotoOfIDModal
           visible={visibleTakePhotoOfIDModal}
