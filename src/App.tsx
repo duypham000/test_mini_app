@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import mainAxios from '@/apis/main-axios'
 import React from 'react'
 import { useDispatch } from 'react-redux'
@@ -11,6 +11,7 @@ import { Storage } from '@/constants/storage'
 function App() {
   const dispath = useDispatch()
   const navigator = useNavigate()
+  const location = useLocation()
   React.useEffect(() => {
     const theme = getLocalStorageItem(Storage.theme) || 'dark'
 
@@ -30,6 +31,11 @@ function App() {
       }
     })
   }, [])
+
+  React.useEffect(() => {
+    // console.log(location)
+    NativeMethod.navigate(location.pathname)
+  }, [location])
   return (
     <Routes>
       {Object.values(routes).map((route) => (

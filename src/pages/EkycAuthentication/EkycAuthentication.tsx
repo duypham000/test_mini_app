@@ -82,7 +82,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   const [loadingGoNextEkyc, setLoadingGoNextEkyc] = React.useState(false)
   // const [profileImage, setProfileImage] = React.useState()
   const [errorCount, setErrorCount] = React.useState(0)
-  const [currentStep, setCurrentStep] = React.useState(1)
+  const [currentStep, setCurrentStep] = React.useState(0)
   const [subCurrentStep, setSubCurrentStep] = React.useState(0)
   const [infrontImage, setInfrontImage] = React.useState<any>()
   const [behindImage, setBehindImage] = React.useState<any>()

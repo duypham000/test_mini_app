@@ -12,6 +12,12 @@ const NativeMethod = {
       args: []
     })
   },
+  navigate: (url) => {
+    EventController.callHandler({
+      name: 'JsToNative_urlchange',
+      args: [url]
+    })
+  },
   recordVideo: ({ callback }) => {
     EventController.set({
       name: 'JsToNative_recordVideo_callback',
