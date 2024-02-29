@@ -18,6 +18,18 @@ const NativeMethod = {
       args: [url]
     })
   },
+  openLoading: () => {
+    EventController.callHandler({
+      name: 'JsToNative_openLoading',
+      args: []
+    })
+  },
+  closeLoading: () => {
+    EventController.callHandler({
+      name: 'JsToNative_closeLoading',
+      args: []
+    })
+  },
   recordVideo: ({ callback }) => {
     EventController.set({
       name: 'JsToNative_recordVideo_callback',

@@ -154,25 +154,35 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   }, [])
 
   const getImage = (callback) => {
+    NativeMethod.openLoading()
     NativeMethod.getImage({
       callback: (file) => {
         const mineType =
           'image/' + file.name.split('.')[file.name.split('.').length - 1]
-        urltoFile(file.base64, file.name, mineType).then((e) => {
-          callback(e)
-        })
+        urltoFile(file.base64, file.name, mineType)
+          .then((e) => {
+            callback(e)
+          })
+          .finally(() => {
+            NativeMethod.closeLoading()
+          })
       }
     })
   }
 
   const takeImage = (callback) => {
+    NativeMethod.openLoading()
     NativeMethod.takeImage({
       callback: (file) => {
         const mineType =
           'image/' + file.name.split('.')[file.name.split('.').length - 1]
-        urltoFile(file.base64, file.name, mineType).then((e) => {
-          callback(e)
-        })
+        urltoFile(file.base64, file.name, mineType)
+          .then((e) => {
+            callback(e)
+          })
+          .finally(() => {
+            NativeMethod.closeLoading()
+          })
       }
     })
   }
@@ -188,13 +198,18 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   }
 
   const handleRecordVideo = () => {
+    NativeMethod.openLoading()
     NativeMethod.recordVideo({
       callback: (file) => {
         const mineType =
           'video/' + file.name.split('.')[file.name.split('.').length - 1]
-        urltoFile(file.base64, file.name, mineType).then((e) => {
-          setProfileVideo(e)
-        })
+        urltoFile(file.base64, file.name, mineType)
+          .then((e) => {
+            setProfileVideo(e)
+          })
+          .finally(() => {
+            NativeMethod.closeLoading()
+          })
       }
     })
   }
@@ -383,6 +398,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
       formData.append('frontCard', infrontImage)
       formData.append('backCard', behindImage)
       setLoadingGoNextEkyc(true)
+      NativeMethod.openLoading()
       ekycOcr(formData)
         .then(() => {
           setSubCurrentStep(subCurrentStep + 1)
@@ -396,6 +412,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
           // });
         })
         .finally(() => {
+          NativeMethod.closeLoading()
           setLoadingGoNextEkyc(false)
         })
       return
@@ -414,6 +431,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
       formData.append('faceLiveVideo', profileVideo)
       formData.append('rotate', iOS ? 'left' : 'normal')
       setLoadingGoNextEkyc(true)
+      NativeMethod.openLoading()
       ekycFaceLiveVideo(formData)
         .then((res: any) => {
           const {
@@ -472,6 +490,7 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
           // });
         })
         .finally(() => {
+          NativeMethod.closeLoading()
           setLoadingGoNextEkyc(false)
         })
       return
