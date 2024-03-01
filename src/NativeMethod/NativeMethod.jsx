@@ -14,8 +14,14 @@ const NativeMethod = {
   },
   navigate: (url) => {
     EventController.callHandler({
-      name: 'JsToNative_urlchange',
+      name: 'JsToNative_urlChange',
       args: [url]
+    })
+  },
+  changeTitle: (title) => {
+    EventController.callHandler({
+      name: 'JsToNative_titleChange',
+      args: [title]
     })
   },
   openLoading: () => {

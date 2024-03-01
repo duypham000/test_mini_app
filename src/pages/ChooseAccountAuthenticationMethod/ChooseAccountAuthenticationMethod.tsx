@@ -7,6 +7,7 @@ import { UrlInternal } from '@/constants/url-internal'
 import VdscLayout from '@/layouts/VdscLayout'
 import { Col, Row } from '@/components/GridLayout'
 import { css } from '@emotion/react'
+import NativeMethod from '@/NativeMethod'
 
 // interface Props {
 //   onChooseEkycAuthentication: any
@@ -16,6 +17,9 @@ import { css } from '@emotion/react'
 const ChooseAccountAuthenticationMethod: React.FC = (): JSX.Element => {
   // const { onChooseEkycAuthentication, onChooseAutoInput } = props
   const navigator = useNavigate()
+  React.useEffect(() => {
+    NativeMethod.changeTitle('Mở tài khoản chứng khoán Rồng Việt')
+  }, [])
   return (
     <VdscLayout>
       <div css={styles.wrapper()}>

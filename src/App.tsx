@@ -30,6 +30,7 @@ function App() {
         navigator(params)
       }
     })
+    NativeMethod.changeTitle('Mở tài khoản chứng khoán Rồng Việt')
   }, [])
 
   React.useEffect(() => {

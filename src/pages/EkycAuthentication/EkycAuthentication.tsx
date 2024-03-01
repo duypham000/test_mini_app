@@ -605,6 +605,9 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     setCurrentStep(currentStep + 1)
   }
 
+  React.useEffect(() => {
+    NativeMethod.changeTitle('Xác thực bằng eKYC')
+  }, [])
   return (
     <VdscLayout>
       <Wrapper isDark={isDark}>

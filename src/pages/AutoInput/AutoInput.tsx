@@ -360,6 +360,10 @@ const AutoInput: React.FC = (): JSX.Element => {
         setSpinningConfirmOTPModal(false)
       })
   }
+
+  React.useEffect(() => {
+    NativeMethod.changeTitle('Tự nhập liệu')
+  }, [])
   return (
     <VdscLayout>
       <Wrapper>
