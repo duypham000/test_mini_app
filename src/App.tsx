@@ -21,7 +21,7 @@ function App() {
         const res = await mainAxios.get('api/general/membership/info')
         dispath(setUserInfo(res.data))
       } catch (error) {
-        NativeMethod.toast('Lỗi token')
+        NativeMethod.toast('Lỗi xác thực')
       }
     })()
     NativeMethod.addEventListener({
