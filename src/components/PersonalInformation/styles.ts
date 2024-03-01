@@ -1,4 +1,5 @@
 import { Theme } from '@/themes/theme'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
@@ -342,3 +343,34 @@ export const Wrapper = styled.div`
     }
   }
 `
+
+export const styles = {
+  inputWrapper: () =>
+    css({
+      marginBottom: 16,
+      '& > div:first-of-type': {
+        marginBottom: 4
+      }
+    }),
+  gender: () =>
+    css({
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: 16,
+      '& > div:first-of-type': {
+        marginRight: 40
+      }
+    }),
+
+  inputSide: () =>
+    css({
+      '& > div:first-of-type': {
+        marginBottom: 4
+      }
+    }),
+
+  backGroup: () =>
+    css({
+      marginBottom: 16
+    })
+}
