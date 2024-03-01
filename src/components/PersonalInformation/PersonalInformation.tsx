@@ -695,7 +695,7 @@ const PersonalInformation: React.FC<Props> = (props): JSX.Element => {
           )}
         </div>
 
-        {dataOpenStockAccount?.bankAccounts?.length < 2 && (
+        {dataOpenStockAccount?.bankAccounts?.length < 3 && (
           <div
             css={{
               display: 'flex',

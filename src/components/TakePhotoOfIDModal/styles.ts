@@ -197,3 +197,28 @@ export const Wrapper = styled.div`
     }
   }
 `
+
+export const stylescss = {
+  imgWrapper: (theme: Theme) =>
+    css({
+      backgroundColor: theme.color.dc044,
+      padding: '24px 16px 16px',
+      position: 'relative',
+      borderRadius: 10,
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column',
+
+      '&> *:last-child': {
+        marginTop: 28
+      },
+      '& > .icon-wapper': {
+        position: 'absolute',
+        left: '50%',
+        transform: 'translate(-50%, -200%)'
+      },
+      '& > span:last-child': {
+        color: theme.color.dc011
+      }
+    })
+}

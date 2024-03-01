@@ -6,7 +6,8 @@ import Typography from '@/components/Typography'
 import { Theme } from '@/themes/theme'
 import DialogWrap from 'rc-dialog'
 import React from 'react'
-import { styles, Wrapper } from './styles'
+import { styles, stylescss, Wrapper } from './styles'
+import { Col, Row } from '../GridLayout'
 
 interface Props {
   onCancel: any
@@ -75,90 +76,97 @@ const TakePhotoOfIDModal: React.FC<Props> = (props) => {
         </div>
         <div
           css={{
-            marginBottom: 24,
-            display: 'flex',
-            justifyContent: 'space-between'
+            marginBottom: 24
           }}
         >
-          <div className='take_photo_of_id_error_item'>
-            <ErrorCmndIcon className='icon-wapper' />
+          <Row gutter={[16, 24]}>
+            <Col span={12}>
+              <div css={stylescss.imgWrapper}>
+                <ErrorCmndIcon className='icon-wapper' />
 
-            <img
-              width={96}
-              height={56}
-              css={{ marginTop: 8, objectFit: `contain` }}
-              src={`https://cdn.simplize.vn/simplizevn/community/images/1679562243709-Group_711.png`}
-            />
+                <img
+                  width={96}
+                  height={56}
+                  css={{ marginTop: 8, objectFit: `contain` }}
+                  src={`https://cdn.simplize.vn/simplizevn/community/images/1679562243709-Group_711.png`}
+                />
 
-            <Typography
-              variant='sub_heading_four'
-              cssCustom={(theme: Theme) => ({
-                color: theme.color.dc014
-              })}
-            >{`Mờ`}</Typography>
-          </div>
+                <Typography
+                  variant='sub_heading_four'
+                  cssCustom={(theme: Theme) => ({
+                    color: theme.color.dc014
+                  })}
+                >{`Mờ`}</Typography>
+              </div>
+            </Col>
+            <Col span={12}>
+              <div css={stylescss.imgWrapper}>
+                <ErrorCmndIcon className='icon-wapper' />
 
-          <div className='take_photo_of_id_error_item'>
-            <ErrorCmndIcon className='icon-wapper' />
+                <img
+                  width={96}
+                  height={56}
+                  css={{ marginTop: 8, objectFit: `contain` }}
+                  src={`https://cdn.simplize.vn/simplizevn/community/images/1679562564874-Group_712.png`}
+                />
 
-            <img
-              width={96}
-              height={56}
-              css={{ marginTop: 8, objectFit: `contain` }}
-              src={`https://cdn.simplize.vn/simplizevn/community/images/1679562564874-Group_712.png`}
-            />
+                <Typography
+                  variant='sub_heading_four'
+                  cssCustom={(theme: Theme) => ({
+                    color: theme.color.dc014
+                  })}
+                >{`Tối`}</Typography>
+              </div>
+            </Col>
 
-            <Typography
-              variant='sub_heading_four'
-              cssCustom={(theme: Theme) => ({
-                color: theme.color.dc014
-              })}
-            >{`Tối`}</Typography>
-          </div>
+            <Col span={12}>
+              <div css={stylescss.imgWrapper}>
+                <ErrorCmndIcon className='icon-wapper' />
 
-          <div className='take_photo_of_id_error_item'>
-            <ErrorCmndIcon className='icon-wapper' />
+                <img
+                  width={96}
+                  height={56}
+                  css={{ marginTop: 8, objectFit: `contain` }}
+                  src={`https://cdn.simplize.vn/simplizevn/community/images/1679562291171-Group_713.png`}
+                />
 
-            <img
-              width={96}
-              height={56}
-              css={{ marginTop: 8, objectFit: `contain` }}
-              src={`https://cdn.simplize.vn/simplizevn/community/images/1679562291171-Group_713.png`}
-            />
+                <Typography
+                  variant='sub_heading_four'
+                  cssCustom={(theme: Theme) => ({
+                    color: theme.color.dc014
+                  })}
+                >{`Chói sáng`}</Typography>
+              </div>
+            </Col>
 
-            <Typography
-              variant='sub_heading_four'
-              cssCustom={(theme: Theme) => ({
-                color: theme.color.dc014
-              })}
-            >{`Chói sáng`}</Typography>
-          </div>
+            <Col span={12}>
+              <div css={stylescss.imgWrapper}>
+                <ErrorCmndIcon className='icon-wapper' />
 
-          <div className='take_photo_of_id_error_item'>
-            <ErrorCmndIcon className='icon-wapper' />
+                {/* <CmndInfrontIcon
+                  className="icon-wapper"
+                  style={{
+                    width: 96,
+                    height: 56,
+                    transform: 'translate(10px, 0px) rotate(-10deg)',
+                  }}
+                /> */}
+                <img
+                  width={96}
+                  height={56}
+                  css={{ marginTop: 8, objectFit: `contain` }}
+                  src={`https://cdn.simplize.vn/simplizevn/community/images/1679562381473-Group_714.png`}
+                />
 
-            {/* <CmndInfrontIcon
-              className="icon-wapper"
-              style={{
-                width: 96,
-                height: 56,
-                transform: 'translate(10px, 0px) rotate(-10deg)',
-              }}
-            /> */}
-            <img
-              width={96}
-              height={56}
-              css={{ marginTop: 8, objectFit: `contain` }}
-              src={`https://cdn.simplize.vn/simplizevn/community/images/1679562381473-Group_714.png`}
-            />
-
-            <Typography
-              variant='sub_heading_four'
-              cssCustom={(theme: Theme) => ({
-                color: theme.color.dc014
-              })}
-            >{`Mất góc`}</Typography>
-          </div>
+                <Typography
+                  variant='sub_heading_four'
+                  cssCustom={(theme: Theme) => ({
+                    color: theme.color.dc014
+                  })}
+                >{`Mất góc`}</Typography>
+              </div>
+            </Col>
+          </Row>
         </div>
 
         <div css={{ display: 'flex', justifyContent: 'center' }}>
