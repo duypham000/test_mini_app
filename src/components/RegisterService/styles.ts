@@ -121,7 +121,7 @@ export const Wrapper = styled.div`
   .financial_services_option {
     width: 70%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: left;
 
     @media (max-width: 767px) {

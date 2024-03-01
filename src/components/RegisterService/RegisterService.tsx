@@ -247,7 +247,7 @@ const RegisterService: React.FC<Props> = (props): JSX.Element => {
             </Col>
 
             <Col className='financial_services_option'>
-              <div css={{ marginBottom: 10 }}>
+              <div css={{ marginRight: 40 }}>
                 <Typography
                   variant='sub_heading_four'
                   cssCustom={(theme: Theme) => ({
@@ -256,8 +256,13 @@ const RegisterService: React.FC<Props> = (props): JSX.Element => {
                 >{`Giao dịch ký quỹ`}</Typography>
               </div>
 
-              <div css={{ display: 'flex' }}>
-                <div css={{ display: 'flex', alignItems: 'center' }}>
+              <div css={{ display: 'flex', flexDirection: 'column' }}>
+                <div
+                  css={{
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
                   <input
                     css={{ width: 16, height: 16 }}
                     type={`radio`}
@@ -278,8 +283,7 @@ const RegisterService: React.FC<Props> = (props): JSX.Element => {
                 <div
                   css={{
                     display: 'flex',
-                    alignItems: 'center',
-                    marginLeft: 30
+                    alignItems: 'center'
                   }}
                 >
                   <input
@@ -323,7 +327,7 @@ const RegisterService: React.FC<Props> = (props): JSX.Element => {
 
             <Col className='register_account_number_random_group'>
               <Row
-                gutter={[6, 4]}
+                gutter={5}
                 className='register_account_number_random_input_group'
               >
                 <Col>
