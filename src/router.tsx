@@ -8,7 +8,15 @@ import ChooseAccountAuthenticationMethod from '@/pages/ChooseAccountAuthenticati
 export const routes = {
   HOME_PAGE: {
     url: UrlInternal.HOME_PAGE,
-    element: <ChooseAccountAuthenticationMethod />
+    element: (
+      <div
+        css={{
+          position: 'relative'
+        }}
+      >
+        <ChooseAccountAuthenticationMethod />
+      </div>
+    )
     // element: <ChooseAccountAuthenticationMethod />
   },
   // CREATE_VDSC: {
@@ -17,11 +25,27 @@ export const routes = {
   // },
   CREATE_VDSC_AUTO_INPUT: {
     url: UrlInternal.CREATE_VDSC_AUTO_INPUT,
-    element: <AutoInput />
+    element: (
+      <div
+        css={{
+          position: 'relative'
+        }}
+      >
+        <AutoInput />
+      </div>
+    )
   },
   CREATE_VDSC_EKYC: {
     url: UrlInternal.CREATE_VDSC_EKYC,
-    element: <EkycAuthentication />
+    element: (
+      <div
+        css={{
+          position: 'relative'
+        }}
+      >
+        <EkycAuthentication />
+      </div>
+    )
   },
   SUPPORT_VDSC: {
     url: UrlInternal.SUPPORT_VDSC,

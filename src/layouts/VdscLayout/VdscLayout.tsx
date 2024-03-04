@@ -6,7 +6,11 @@ interface Props {
 const VdscLayout: React.FC<Props> = (props): JSX.Element => {
   const { children } = props
   return (
-    <div css={{ padding: '28px 20px', position: 'relative' }}>{children}</div>
+    <div
+      css={{ padding: '28px 20px', position: 'relative', minHeight: '100vh' }}
+    >
+      {children}
+    </div>
   )
 }
 

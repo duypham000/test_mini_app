@@ -8,10 +8,17 @@ import NativeMethod from '@/NativeMethod'
 import { getLocalStorageItem } from './utils/storage/local-storage'
 import { Storage } from '@/constants/storage'
 
+import SwitchTransition from 'react-transition-group/SwitchTransition'
+import CSSTransition from 'react-transition-group/CSSTransition'
+import utilStyles from './styles/util-styles'
+
 function App() {
   const dispath = useDispatch()
   const navigator = useNavigate()
   const location = useLocation()
+  const [styleFade, setStyleFade] = React.useState<any>('fade-pre')
+  const [stateLocation, setStateLocation] = React.useState<any>('fade-pre')
+
   React.useEffect(() => {
     const theme = getLocalStorageItem(Storage.theme) || 'dark'
 
@@ -34,15 +41,34 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    // console.log(location)
     NativeMethod.navigate(location.pathname)
+    if (location.pathname === '/') {
+      setStyleFade('fade-pre')
+    } else {
+      setStyleFade('fade-next')
+    }
+    console.log(location)
+
+    setTimeout(() => {
+      setStateLocation(location)
+    }, 50)
   }, [location])
   return (
-    <Routes>
-      {Object.values(routes).map((route) => (
-        <Route path={route.url} element={route.element} />
-      ))}
-    </Routes>
+    <div css={utilStyles.scrollBarMobile()}>
+      <SwitchTransition mode={'out-in'}>
+        <CSSTransition
+          key={stateLocation.key}
+          timeout={500}
+          classNames={styleFade}
+        >
+          <Routes location={stateLocation}>
+            {Object.values(routes).map((route) => (
+              <Route path={route.url} element={route.element} />
+            ))}
+          </Routes>
+        </CSSTransition>
+      </SwitchTransition>
+    </div>
   )
 }
 
