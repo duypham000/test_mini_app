@@ -21,8 +21,8 @@ import moment from 'moment'
 import vdscApi from '@/apis/vdsc-api'
 import AuthenticationMethodModal from '@/components/AuthenticationMethodModal'
 import ConfirmOTPModal from '@/components/ConfirmOTPModal'
-import { UrlInternal } from '@/constants/url-internal'
-import { useNavigate } from 'react-router-dom'
+import { UrlInternal, choseStepRedirect } from '@/constants/url-internal'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import VdscLayout from '@/layouts/VdscLayout'
 import { EmptyVideoIcon } from '@/icons/EmptyVideoIcon'
 import { colors } from '@/themes/colors'
@@ -53,6 +53,9 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   // const setCurrentStep = (req) => {
   //   navigate(choseStepRedirect({ step: req }))
   // }
+  const [searchParams] = useSearchParams()
+  const currentStep = parseInt(searchParams.get('step') || '0')
+  const subCurrentStep = parseInt(searchParams.get('sub') || '0')
 
   const [dataOpenStockAccount, setDataOpenStockAccount] = React.useState({
     otpSendingMethod: '',
@@ -93,12 +96,16 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   const [loadingGoNextEkyc, setLoadingGoNextEkyc] = React.useState(false)
   // const [profileImage, setProfileImage] = React.useState()
   const [errorCount, setErrorCount] = React.useState(0)
-  const [currentStep, setCurrentStep] = React.useState(0)
-  const [subCurrentStep, setSubCurrentStep] = React.useState(0)
+  // const [currentStep, setCurrentStep] = React.useState(0)
+  // const [subCurrentStep, setSubCurrentStep] = React.useState(0)
 
-  // const setSubCurrentStep = (req) => {
-  //   navigate(choseStepRedirect({ step: currentStep, sub: req }))
-  // }
+  const setSubCurrentStep = (req) => {
+    navigate(choseStepRedirect({ step: currentStep, sub: req }))
+  }
+  const setCurrentStep = (req) => {
+    navigate(choseStepRedirect({ step: req }))
+  }
+
   const [infrontImage, setInfrontImage] = React.useState<any>()
   const [behindImage, setBehindImage] = React.useState<any>()
   const [profileVideo, setProfileVideo] = React.useState<any>()

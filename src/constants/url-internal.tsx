@@ -9,7 +9,7 @@ export enum UrlInternal {
 export const choseStepRedirect = (req: { step: any; sub?: any }) => {
   return (
     UrlInternal.CREATE_VDSC_EKYC +
-    '?step==' +
+    '?step=' +
     req.step +
     (req.sub ? '&&sub=' + req.sub : req.step === 1 ? '&&sub=1' : '')
   )
