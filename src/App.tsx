@@ -17,7 +17,8 @@ function App() {
   const navigator = useNavigate()
   const location = useLocation()
   const [styleFade, setStyleFade] = React.useState<any>('fade-pre')
-  const [stateLocation, setStateLocation] = React.useState<any>('fade-pre')
+  const [stateLocation, setStateLocation] = React.useState<any>(location)
+  const [stackLocation, setStackLocation] = React.useState<any[]>([])
 
   React.useEffect(() => {
     const theme = getLocalStorageItem(Storage.theme) || 'dark'
@@ -42,10 +43,14 @@ function App() {
 
   React.useEffect(() => {
     NativeMethod.navigate(location.pathname)
-    if (location.pathname === '/') {
-      setStyleFade('fade-pre')
+    const index = stackLocation.indexOf(location.pathname)
+    if (index !== -1) {
+      setStyleFade('slide-pre')
+      const newStack = [...stackLocation].splice(0, index + 1)
+      setStackLocation(newStack)
     } else {
-      setStyleFade('fade-next')
+      setStyleFade('slide-next')
+      setStackLocation((prev) => [...prev, location.pathname])
     }
     console.log(location)
 
@@ -55,11 +60,11 @@ function App() {
   }, [location])
   return (
     <div css={utilStyles.scrollBarMobile()}>
-      <SwitchTransition mode={'out-in'}>
+      <SwitchTransition mode='in-out'>
         <CSSTransition
           key={stateLocation.key}
-          timeout={500}
           classNames={styleFade}
+          timeout={styleFade === 'slide-pre' ? 100 : 250}
         >
           <Routes location={stateLocation}>
             {Object.values(routes).map((route) => (

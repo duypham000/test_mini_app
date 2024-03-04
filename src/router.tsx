@@ -25,27 +25,11 @@ export const routes = {
   // },
   CREATE_VDSC_AUTO_INPUT: {
     url: UrlInternal.CREATE_VDSC_AUTO_INPUT,
-    element: (
-      <div
-        css={{
-          position: 'relative'
-        }}
-      >
-        <AutoInput />
-      </div>
-    )
+    element: <AutoInput />
   },
   CREATE_VDSC_EKYC: {
     url: UrlInternal.CREATE_VDSC_EKYC,
-    element: (
-      <div
-        css={{
-          position: 'relative'
-        }}
-      >
-        <EkycAuthentication />
-      </div>
-    )
+    element: <EkycAuthentication />
   },
   SUPPORT_VDSC: {
     url: UrlInternal.SUPPORT_VDSC,

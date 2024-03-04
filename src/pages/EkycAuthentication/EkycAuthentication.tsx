@@ -39,9 +39,20 @@ const {
   getBankList
 } = vdscApi
 
+// interface EkycAuthenticationProps {
+//   currentStep: any
+//   subCurrentStep: any
+// }
+
 const EkycAuthentication: React.FC = (): JSX.Element => {
+  // const { currentStep, subCurrentStep } = props
+
   const isDark = useAppSelector((state) => state.theme.isDark)
   const navigate = useNavigate()
+  // const { search } = useLocation()
+  // const setCurrentStep = (req) => {
+  //   navigate(choseStepRedirect({ step: req }))
+  // }
 
   const [dataOpenStockAccount, setDataOpenStockAccount] = React.useState({
     otpSendingMethod: '',
@@ -84,6 +95,10 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   const [errorCount, setErrorCount] = React.useState(0)
   const [currentStep, setCurrentStep] = React.useState(0)
   const [subCurrentStep, setSubCurrentStep] = React.useState(0)
+
+  // const setSubCurrentStep = (req) => {
+  //   navigate(choseStepRedirect({ step: currentStep, sub: req }))
+  // }
   const [infrontImage, setInfrontImage] = React.useState<any>()
   const [behindImage, setBehindImage] = React.useState<any>()
   const [profileVideo, setProfileVideo] = React.useState<any>()
