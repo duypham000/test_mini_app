@@ -219,6 +219,16 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     // setBehindImage(fileImage)
   }
 
+  // const testUploadFrontImage = (e: any) => {
+  //   const fileImage = e.target.files[0]
+  //   setInfrontImage(fileImage)
+  // }
+
+  // const testUploadBehindImage = (e: any) => {
+  //   const fileImage = e.target.files[0]
+  //   setBehindImage(fileImage)
+  // }
+
   const handleRecordVideo = () => {
     NativeMethod.openLoading()
     NativeMethod.recordVideo({
@@ -820,11 +830,12 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
 
                             <input
                               css={{ display: 'none' }}
-                              type={`button`}
                               id={`in_front_image`}
+                              type={`button`}
                               onClick={() => {
                                 handleUploadInfrontImage()
                               }}
+                              // onChange={testUploadFrontImage}
                               accept={`image/*`}
                             />
                           </div>
@@ -940,11 +951,13 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
                             </label>
                             <input
                               css={{ display: 'none' }}
-                              type={`button`}
                               id={`behind_image`}
+                              type={`button`}
                               onClick={() => {
                                 handleUploadBehindImage()
                               }}
+                              // type={`file`}
+                              // onChange={testUploadBehindImage}
                               accept={`image/*`}
                             />
                           </div>

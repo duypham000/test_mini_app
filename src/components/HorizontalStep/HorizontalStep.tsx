@@ -52,7 +52,7 @@ const HorizontalStep: React.FC<Props> = (props): JSX.Element => {
       </div>
 
       <div css={{ width: '33%' }}>
-        <Row justify='center' css={styles.step()}>
+        <Row justify='center' css={styles.step({ active: false })}>
           {step >= 3 && <div css={styles.dot()} />}
 
           <Typography

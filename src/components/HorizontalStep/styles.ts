@@ -45,7 +45,7 @@ const styles = {
           content: "''",
           position: 'absolute',
           height: 2,
-          width: 206,
+          width: '100%',
           left: 'calc(50% + 6px)',
           top: -23,
           backgroundColor: theme.color.orange500
