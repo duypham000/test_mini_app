@@ -14,16 +14,12 @@ import Button from '@/components/Button'
 import { Theme } from '@/themes/theme'
 import { setAccountList } from '@/redux/slices/profile-slice'
 import { setVisibleConnectToVdsc } from '@/redux/slices/portfolio-slice'
-import ConnectToVdscDialog from '@/components/ConnectToVdscDialog'
 
 const IntegrationModule: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const accountList: any = useAppSelector((state) => state.profile.accountList)
 
-  const visibleConnectToVdsc = useAppSelector(
-    (state) => state.portfolio.visibleConnectToVdsc
-  )
   const currentUser = useAppSelector((state) => state.profile.currentUser)
 
   React.useEffect(() => {
@@ -93,7 +89,6 @@ const IntegrationModule: React.FC = () => {
             {/* </Link> */}
           </Row>
         )}
-      {visibleConnectToVdsc && <ConnectToVdscDialog />}
     </Col>
   )
 }
