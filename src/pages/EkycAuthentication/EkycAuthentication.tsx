@@ -1,7 +1,5 @@
 import React from 'react'
 import { Wrapper } from './styles'
-import TakePhotoModalInfront from '@/components/TakePhotoModal'
-import TakePhotoModalBehind from '@/components/TakePhotoModal'
 import PersonalInformation from '@/components/PersonalInformation'
 import RegisterService from '@/components/RegisterService'
 import ConfirmForm from '@/components/ConfirmForm'
@@ -85,10 +83,6 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
     ],
     serviceCallPwd: ''
   })
-  const [visibleTakePhotoModalInfront, setVisibleTakePhotoModalInfront] =
-    React.useState(false)
-  const [visibleTakePhotoModalBehind, setVisibleTakePhotoModalBehind] =
-    React.useState(false)
   // const [visibleTakePhotoModalProfile, setVisibleTakePhotoModalProfile] =
   //   React.useState(false)
   const [visibleTakePhotoOfIDModal, setVisibleTakePhotoOfIDModal] =
@@ -254,14 +248,6 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
   const handletakeBehindImage = () => {
     takeImage(setBehindImage)
     // setBehindImage(fileImage)
-  }
-
-  const handleUseImageFileInfront = (imageFile: any) => {
-    setInfrontImage(imageFile)
-  }
-
-  const handleUseImageFileBehind = (imageFile: any) => {
-    setBehindImage(imageFile)
   }
 
   const handleCancelTakePhotoOfIDModal = () => {
@@ -1182,35 +1168,6 @@ const EkycAuthentication: React.FC = (): JSX.Element => {
             )}
           </>
         )}
-
-        {visibleTakePhotoModalInfront && (
-          <TakePhotoModalInfront
-            visible={visibleTakePhotoModalInfront}
-            onCancel={() => setVisibleTakePhotoModalInfront(false)}
-            onUseImageFile={handleUseImageFileInfront}
-            onVisibleTakePhotoOfIDModal={handleVisibleTakePhotoOfIDModal}
-          />
-        )}
-
-        {visibleTakePhotoModalBehind && (
-          <TakePhotoModalBehind
-            visible={visibleTakePhotoModalBehind}
-            onCancel={() => setVisibleTakePhotoModalBehind(false)}
-            onUseImageFile={handleUseImageFileBehind}
-            onVisibleTakePhotoOfIDModal={handleVisibleTakePhotoOfIDModal}
-          />
-        )}
-
-        {/* {visibleTakePhotoModalProfile && (
-          <RecordVideoModal
-            visible={visibleTakePhotoModalProfile}
-            onCancel={() => setVisibleTakePhotoModalProfile(false)}
-            onUseVideoFile={() => {
-              return
-            }}
-            onUseImageFile={handleUseImageFileProfile}
-          />
-        )} */}
 
         <TakePhotoOfIDModal
           visible={visibleTakePhotoOfIDModal}

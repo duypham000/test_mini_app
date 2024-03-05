@@ -5,10 +5,9 @@ import { css } from '@emotion/react'
 export const styles = {
   wrapper: () => (theme: Theme) =>
     css({
-      top: '50%',
-      maxWidth: 684,
+      top: 0,
+      width: '100%',
       borderRadius: 10,
-      transform: 'translateY(-50%)',
 
       '& .simplize-dialog-header': {
         borderRadius: 10,
@@ -69,7 +68,7 @@ export const styles = {
 export const Wrapper = styled.div`
   @media (max-width: 767px) {
     position: relative;
-    margin-top: 16px;
+    margin-top: 0px;
   }
 
   .take_photo_of_id_title {
